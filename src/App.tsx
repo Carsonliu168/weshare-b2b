@@ -787,7 +787,7 @@ function ContactSection() {
               立即諮詢
             </button>
             <p className="font-inter text-text-muted text-xs text-center">
-              或直接寄信至：<a href="mailto:service@weshareai.tw" className="text-gold underline">service@weshareai.tw</a>
+              或直接寄信至：<a href="mailto:weshareai168@gmail.com" className="text-gold underline">weshareai168@gmail.com</a>
             </p>
           </div>
         )}
