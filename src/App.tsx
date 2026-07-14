@@ -38,6 +38,7 @@ const navItems = [
   { id: 'section-4', label: '戰情月報' },
   { id: 'section-5', label: '生態位佈局' },
   { id: 'section-6', label: '方案規劃' },
+  { id: 'section-contact', label: '立即諮詢' },
 ];
 
 const stages = [
@@ -87,24 +88,24 @@ const visitors = [
 const tiers = [
   {
     title: '基礎版',
-    subtitle: '行業戰情雷達',
+    subtitle: '全球媒體聲量方案',
     highlighted: false,
     features: [
-      '每月動態買家情報更新',
-      '市場異動警報推播',
-      '競爭對手提單監控',
-      '全球 12,000+ 媒體發稿（基礎版）',
-      '標準戰情月報（PDF）',
+      '全球 12,000+ 通訊社媒體發稿',
+      '彈性選擇：單次專案 / 季度方案 / 年約方案',
+      '適合品牌活動、新品發布、觀光推廣',
+      '競爭對手市場動態監控',
+      '標準媒體刊登成效報告（PDF）',
     ],
   },
   {
     title: '進階版',
-    subtitle: '定向 AI ABM 服務',
+    subtitle: '定向情報服務',
     highlighted: false,
     features: [
       '含基礎版全部內容',
-      '目標帳號採購名單建立',
-      'AI 超個人化冷開發信管理',
+      'AI 精準買手名單與採購意圖情報交付',
+      '目標市場採購決策者資料庫',
       'ABM 媒體歸因追蹤報告',
       '全球 12,000+ 媒體發稿（進階版）',
     ],
@@ -130,7 +131,7 @@ const tiers = [
       '含旗艦版全部內容',
       '頂級全球權威媒體 PR 發稿',
       'GEO 生成式搜索引擎優化',
-      'AI 數位分身資產製作',
+      'AI 品牌影音內容製作',
       '專屬客戶成功顧問',
     ],
   },
@@ -707,6 +708,94 @@ function Section6() {
   );
 }
 
+function ContactSection() {
+  const [formData, setFormData] = useState({ name: '', company: '', service: '', contact: '' });
+  const [submitted, setSubmitted] = useState(false);
+
+  const handleSubmit = () => {
+    if (formData.name && formData.company && formData.contact) {
+      setSubmitted(true);
+    }
+  };
+
+  return (
+    <section id="section-contact" className="w-full overflow-x-hidden bg-slate-light py-20 px-6 lg:pl-56">
+      <div className="max-w-2xl mx-auto">
+        <h2 className="font-playfair text-3xl md:text-4xl text-navy font-bold mb-4 text-center">
+          立即諮詢
+        </h2>
+        <p className="font-inter text-text-muted text-center mb-12">
+          填寫以下資料，維訊專員將於 24 小時內與您聯繫
+        </p>
+        {submitted ? (
+          <div className="bg-navy rounded-xl p-12 text-center border-2 border-gold gold-box-glow">
+            <CheckCircle className="w-16 h-16 text-gold mx-auto mb-4" />
+            <h3 className="font-playfair text-2xl text-gold font-bold mb-2">感謝您的諮詢！</h3>
+            <p className="font-inter text-white/70">我們的專員將於 24 小時內與您聯繫。</p>
+          </div>
+        ) : (
+          <div className="bg-white rounded-xl p-8 border-2 border-navy/20 shadow-lg space-y-5">
+            <div>
+              <label className="font-inter text-sm text-navy font-semibold mb-2 block">姓名 *</label>
+              <input
+                type="text"
+                placeholder="您的姓名"
+                value={formData.name}
+                onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                className="w-full px-4 py-3 rounded-lg border-2 border-navy/20 font-inter text-navy focus:outline-none focus:border-gold transition-colors"
+              />
+            </div>
+            <div>
+              <label className="font-inter text-sm text-navy font-semibold mb-2 block">公司名稱 *</label>
+              <input
+                type="text"
+                placeholder="您的公司名稱"
+                value={formData.company}
+                onChange={(e) => setFormData({ ...formData, company: e.target.value })}
+                className="w-full px-4 py-3 rounded-lg border-2 border-navy/20 font-inter text-navy focus:outline-none focus:border-gold transition-colors"
+              />
+            </div>
+            <div>
+              <label className="font-inter text-sm text-navy font-semibold mb-2 block">服務需求</label>
+              <select
+                value={formData.service}
+                onChange={(e) => setFormData({ ...formData, service: e.target.value })}
+                className="w-full px-4 py-3 rounded-lg border-2 border-navy/20 font-inter text-navy focus:outline-none focus:border-gold transition-colors bg-white"
+              >
+                <option value="">請選擇方案</option>
+                <option value="tier1">基礎版 — 全球媒體聲量方案</option>
+                <option value="tier2">進階版 — 定向情報服務</option>
+                <option value="tier3">旗艦版 — 匿名解密戰情室</option>
+                <option value="tier4">總裁全盾與矛特攻方案</option>
+                <option value="custom">客製化需求</option>
+              </select>
+            </div>
+            <div>
+              <label className="font-inter text-sm text-navy font-semibold mb-2 block">聯絡方式 *（Email 或電話）</label>
+              <input
+                type="text"
+                placeholder="your@email.com 或 0912-345-678"
+                value={formData.contact}
+                onChange={(e) => setFormData({ ...formData, contact: e.target.value })}
+                className="w-full px-4 py-3 rounded-lg border-2 border-navy/20 font-inter text-navy focus:outline-none focus:border-gold transition-colors"
+              />
+            </div>
+            <button
+              onClick={handleSubmit}
+              className="w-full py-4 bg-navy text-white font-inter font-semibold rounded-lg hover:bg-gold hover:text-navy transition-all duration-300 text-lg"
+            >
+              立即諮詢
+            </button>
+            <p className="font-inter text-text-muted text-xs text-center">
+              或直接寄信至：<a href="mailto:service@weshareai.tw" className="text-gold underline">service@weshareai.tw</a>
+            </p>
+          </div>
+        )}
+      </div>
+    </section>
+  );
+}
+
 function Footer() {
   return (
     <footer className="w-full overflow-x-hidden geometric-bg relative py-12 px-6 lg:pl-56">
@@ -764,6 +853,8 @@ function App() {
         <Section5 />
         <SectionDivider />
         <Section6 />
+        <SectionDivider />
+        <ContactSection />
         <SectionDivider />
         <Footer />
       </main>
