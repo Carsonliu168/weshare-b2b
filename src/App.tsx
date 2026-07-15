@@ -269,7 +269,7 @@ function Section1() {
           </span>
         </div>
 
-        <div className="flex items-center justify-center gap-4 mb-4 animate-fade-in" style={{ animationDelay: '0.4s' }}>
+        <div className="flex items-center justify-center gap-2 mb-4 animate-fade-in" style={{ animationDelay: '0.4s' }}>
           <img src="/logo.png" alt="Weshare Logo" className="w-14 h-14 md:w-20 md:h-20 object-contain" />
           <h1
             className="font-playfair text-white font-bold break-keep"
