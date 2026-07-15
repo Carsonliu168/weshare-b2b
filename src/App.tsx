@@ -692,6 +692,7 @@ function Section6() {
                 ))}
               </ul>
               <button
+                onClick={() => document.getElementById('section-contact')?.scrollIntoView({ behavior: 'smooth' })}
                 className={`w-full py-3 rounded-lg font-inter font-semibold transition-all duration-300 ${
                   tier.highlighted
                     ? 'bg-gold text-navy hover:bg-gold/90 gold-box-glow'
