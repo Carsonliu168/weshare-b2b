@@ -820,10 +820,10 @@ function Footer() {
       <div className="max-w-6xl mx-auto relative z-10 text-center">
         <p className="font-inter text-white text-lg mb-2">© 2025 維訊國際數位有限公司</p>
         <p className="font-inter text-gold text-sm mb-4">
-          全球媒體聲量 × AI 數據智能 = 可量化的 B2B 商機
+          版權所有 · All Rights Reserved
         </p>
         <p className="font-inter text-white/50 text-xs">
-          Weshare International Digital Co., Ltd.
+          Weshare International Digital Co., Ltd. · 未經授權，禁止轉載或複製本站任何內容
         </p>
       </div>
     </footer>
