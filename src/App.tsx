@@ -269,12 +269,15 @@ function Section1() {
           </span>
         </div>
 
-        <h1
-          className="font-playfair text-white font-bold mb-4 animate-fade-in break-keep"
-          style={{ animationDelay: '0.4s', fontSize: 'clamp(2rem, 8vw, 4rem)' }}
-        >
-          <span className="md:text-7xl">維訊國際數位</span>
-        </h1>
+        <div className="flex items-center justify-center gap-4 mb-4 animate-fade-in" style={{ animationDelay: '0.4s' }}>
+          <img src="/logo.png" alt="Weshare Logo" className="w-14 h-14 md:w-20 md:h-20 object-contain" />
+          <h1
+            className="font-playfair text-white font-bold break-keep"
+            style={{ fontSize: 'clamp(1.8rem, 5vw, 3rem)' }}
+          >
+            維訊國際數位
+          </h1>
+        </div>
 
         <h2 className="font-playfair text-2xl md:text-3xl text-gold mb-8 animate-fade-in gold-glow" style={{ animationDelay: '0.6s' }}>
           全球媒體聲量 × AI 數據智能 = 可量化的 B2B 商機
