@@ -315,7 +315,7 @@ function Section1() {
           <ArrowUpRight className="inline-block ml-2 w-5 h-5" />
         </button>
 
-        <div className="absolute bottom-8 right-8 font-inter text-gold/60 text-xs animate-fade-in" style={{ animationDelay: '1.6s' }}>
+        <div className="mt-10 sm:mt-0 sm:absolute sm:bottom-8 sm:right-8 font-inter text-gold/60 text-xs animate-fade-in" style={{ animationDelay: '1.6s' }}>
           Powered by Weshare AI Intelligence
         </div>
       </div>
