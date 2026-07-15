@@ -592,7 +592,7 @@ function Section5() {
           台灣 B2B 市場格局與生態位互補
         </h2>
         <p className="font-inter text-gold text-center mb-12">
-          維訊的市場定位：4A 廣告集團的 B2B 數據科技外掛
+          維訊的市場定位：企業國際化的 B2B 數據科技夥伴
         </p>
 
         <div className="grid md:grid-cols-3 gap-6 mb-8">
@@ -644,7 +644,7 @@ function Section5() {
 
         <div className="bg-navy rounded-xl p-8 border border-gold/40">
           <p className="font-inter text-gold text-lg text-center leading-relaxed">
-            對 4A 廣告集團而言，維訊是開拓製造業客群的即插即用型 B2B 數據增長外掛——無需重建技術能力，直接交付可量化的商機轉化結果。
+            維訊提供一站式全託管服務，無需企業內部建立技術團隊，直接交付可量化的國際商機轉化結果。
           </p>
         </div>
       </div>
