@@ -712,9 +712,25 @@ function ContactSection() {
   const [formData, setFormData] = useState({ name: '', company: '', service: '', contact: '' });
   const [submitted, setSubmitted] = useState(false);
 
-  const handleSubmit = () => {
+  const handleSubmit = async () => {
     if (formData.name && formData.company && formData.contact) {
-      setSubmitted(true);
+      try {
+        const response = await fetch('https://formspree.io/f/mojgvbdw', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            姓名: formData.name,
+            公司名稱: formData.company,
+            服務需求: formData.service,
+            聯絡方式: formData.contact,
+          }),
+        });
+        if (response.ok) {
+          setSubmitted(true);
+        }
+      } catch (error) {
+        console.error('Form submission error:', error);
+      }
     }
   };
 
