@@ -426,7 +426,7 @@ function Section3() {
     <section id="section-3" className="min-h-screen w-full overflow-x-hidden geometric-bg relative py-20 px-6 lg:pl-56">
       <Particles />
       <div className="max-w-6xl mx-auto relative z-10">
-        <h2 className="font-playfair text-white font-bold mb-16 text-center" style={{fontSize: "clamp(1.5rem, 4vw, 2.2rem)"}}>
+        <h2 className="font-playfair text-white font-bold mb-16 text-center" style={{fontSize: "clamp(1.1rem, 3.5vw, 2.2rem)"}}>
           維訊數據驅動閉環：全路徑商機獵殺
         </h2>
 
