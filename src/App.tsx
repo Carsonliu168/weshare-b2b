@@ -330,7 +330,7 @@ function Section2() {
   return (
     <section id="section-2" className="min-h-screen w-full overflow-x-hidden bg-slate-light py-20 px-6 lg:pl-56">
       <div className="max-w-6xl mx-auto">
-        <h2 className="font-playfair text-navy font-bold mb-16 text-center leading-tight" style={{fontSize: "clamp(1.5rem, 4vw, 2.2rem)"}}>
+        <h2 className="font-playfair text-navy font-bold mb-16 text-center leading-tight" style={{fontSize: "clamp(1rem, 3vw, 2rem)"}}>
           全球外銷廠商的最後一哩路：從品牌曝光到商機轉化
         </h2>
 
