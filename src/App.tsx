@@ -391,6 +391,29 @@ function Section2() {
             維訊擁有全球 12,000+ 通訊社發稿資源，直接解決台灣廠商的國際曝光難題——再結合 AI 數據追蹤，讓每一篇新聞稿都成為可量化的商機入口。
           </p>
         </div>
+
+        {/* 媒體刊登實績 */}
+        <div className="mt-12">
+          <h3 className="font-playfair text-2xl text-navy font-bold text-center mb-2">媒體刊登實績</h3>
+          <p className="font-inter text-text-muted text-center text-sm mb-8">以下為維訊實際協助客戶登上國際權威媒體之真實案例</p>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div className="rounded-xl overflow-hidden border-2 border-navy/20 shadow-lg">
+              <div className="bg-navy px-4 py-2 flex items-center gap-2">
+                <span className="font-inter text-white font-bold text-sm">AP</span>
+                <span className="font-inter text-white/70 text-xs">Associated Press · AP News</span>
+              </div>
+              <img src="/press-ap.jpg" alt="AP News 刊登截圖" className="w-full object-cover" />
+            </div>
+            <div className="rounded-xl overflow-hidden border-2 border-navy/20 shadow-lg">
+              <div className="bg-[#FF8000] px-4 py-2 flex items-center gap-2">
+                <span className="font-inter text-white font-bold text-sm">Reuters</span>
+                <span className="font-inter text-white/70 text-xs">路透社 · 全球最大通訊社</span>
+              </div>
+              <img src="/press-reuters.jpg" alt="Reuters 刊登截圖" className="w-full object-cover" />
+            </div>
+          </div>
+          <p className="font-inter text-text-muted text-center text-xs mt-4">* 客戶資料依保密協議處理，媒體刊登內容均為真實案例</p>
+        </div>
       </div>
     </section>
   );
