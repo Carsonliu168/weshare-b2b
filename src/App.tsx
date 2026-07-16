@@ -331,7 +331,7 @@ function Section2() {
     <section id="section-2" className="min-h-screen w-full overflow-x-hidden bg-slate-light py-20 px-6 lg:pl-56">
       <div className="max-w-6xl mx-auto">
         <h2 className="font-playfair text-navy font-bold mb-16 text-center leading-tight" style={{fontSize: "clamp(1.4rem, 4.5vw, 2rem)"}}>
-          全球外銷廠商的最後一哩路：從品牌曝光到商機轉化
+          從品牌曝光到商機轉化
         </h2>
 
         <div className="grid md:grid-cols-2 gap-8 mb-12">
@@ -427,7 +427,7 @@ function Section3() {
       <Particles />
       <div className="max-w-6xl mx-auto relative z-10">
         <h2 className="font-playfair text-white font-bold mb-16 text-center" style={{fontSize: "clamp(1.1rem, 3.5vw, 2.2rem)"}}>
-          維訊數據驅動閉環：全路徑商機獵殺
+          維訊數據閉環：全路徑商機獵殺
         </h2>
 
         <div className="grid md:grid-cols-4 gap-4 mb-8">
