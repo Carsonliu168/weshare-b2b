@@ -679,7 +679,7 @@ function Section6() {
   return (
     <section id="section-6" className="min-h-screen w-full overflow-x-hidden bg-slate-light py-20 px-6 lg:pl-56">
       <div className="max-w-6xl mx-auto">
-        <h2 className="font-playfair text-3xl md:text-4xl text-navy font-bold mb-4 text-center">
+        <h2 className="font-playfair text-2xl md:text-3xl text-navy font-bold mb-4 text-center" style={{whiteSpace: "nowrap", fontSize: "clamp(1.2rem, 4vw, 1.8rem)"}}>
           階梯式全託管方案規劃
         </h2>
         <p className="font-inter text-text-muted text-center mb-12">
