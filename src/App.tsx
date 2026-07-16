@@ -330,7 +330,7 @@ function Section2() {
   return (
     <section id="section-2" className="min-h-screen w-full overflow-x-hidden bg-slate-light py-20 px-6 lg:pl-56">
       <div className="max-w-6xl mx-auto">
-        <h2 className="font-playfair text-navy font-bold mb-16 text-center leading-tight">
+        <h2 className="font-playfair text-navy font-bold mb-16 text-center leading-tight" style={{fontSize: "clamp(1.5rem, 4vw, 2.2rem)"}}>
           全球外銷廠商的最後一哩路：從品牌曝光到商機轉化
         </h2>
 
@@ -426,7 +426,7 @@ function Section3() {
     <section id="section-3" className="min-h-screen w-full overflow-x-hidden geometric-bg relative py-20 px-6 lg:pl-56">
       <Particles />
       <div className="max-w-6xl mx-auto relative z-10">
-        <h2 className="font-playfair text-white font-bold mb-16 text-center">
+        <h2 className="font-playfair text-white font-bold mb-16 text-center" style={{fontSize: "clamp(1.5rem, 4vw, 2.2rem)"}}>
           維訊數據驅動閉環：全路徑商機獵殺
         </h2>
 
@@ -476,7 +476,7 @@ function Section4() {
   return (
     <section id="section-4" className="min-h-screen w-full overflow-x-hidden bg-slate-light py-20 px-6 lg:pl-56">
       <div className="max-w-6xl mx-auto">
-        <h2 className="font-playfair text-navy font-bold mb-4 text-center">
+        <h2 className="font-playfair text-navy font-bold mb-4 text-center" style={{fontSize: "clamp(1.5rem, 4vw, 2.2rem)"}}>
           維訊全球商務戰情月報 Live Demo
         </h2>
         <p className="font-inter text-text-muted text-center mb-12">
@@ -611,7 +611,7 @@ function Section5() {
     <section id="section-5" className="min-h-screen w-full overflow-x-hidden geometric-bg relative py-20 px-6 lg:pl-56">
       <Particles />
       <div className="max-w-6xl mx-auto relative z-10">
-        <h2 className="font-playfair text-white font-bold mb-4 text-center">
+        <h2 className="font-playfair text-white font-bold mb-4 text-center" style={{fontSize: "clamp(1.5rem, 4vw, 2.2rem)"}}>
           台灣 B2B 市場格局與生態位互補
         </h2>
         <p className="font-inter text-gold text-center mb-12">
@@ -679,7 +679,7 @@ function Section6() {
   return (
     <section id="section-6" className="min-h-screen w-full overflow-x-hidden bg-slate-light py-20 px-6 lg:pl-56">
       <div className="max-w-6xl mx-auto">
-        <h2 className="font-playfair text-2xl md:text-3xl text-navy font-bold mb-4 text-center" style={{whiteSpace: "nowrap", fontSize: "clamp(1.2rem, 4vw, 1.8rem)"}}>
+        <h2 className="font-playfair text-2xl md:text-3xl text-navy font-bold mb-4 text-center" style={{fontSize: "clamp(1.5rem, 4vw, 2.2rem)"}}>
           階梯式全託管方案規劃
         </h2>
         <p className="font-inter text-text-muted text-center mb-12">
@@ -764,7 +764,7 @@ function ContactSection() {
   return (
     <section id="section-contact" className="w-full overflow-x-hidden bg-slate-light py-20 px-6 lg:pl-56">
       <div className="max-w-2xl mx-auto">
-        <h2 className="font-playfair text-navy font-bold mb-4 text-center">
+        <h2 className="font-playfair text-navy font-bold mb-4 text-center" style={{fontSize: "clamp(1.5rem, 4vw, 2.2rem)"}}>
           立即諮詢
         </h2>
         <p className="font-inter text-text-muted text-center mb-12">
