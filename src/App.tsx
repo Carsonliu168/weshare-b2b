@@ -38,6 +38,7 @@ const navItems = [
   { id: 'section-4', label: '戰情月報' },
   { id: 'section-5', label: '生態位佈局' },
   { id: 'section-6', label: '方案規劃' },
+  { id: 'section-faq', label: '常見問題' },
   { id: 'section-contact', label: '立即諮詢' },
 ];
 
@@ -742,6 +743,79 @@ function Section6() {
   );
 }
 
+
+function FAQSection() {
+  const [openIndex, setOpenIndex] = React.useState<number | null>(null);
+
+  const faqs = [
+    {
+      q: '維訊的新聞稿發出去之後，會出現在哪些媒體？能保證上 AP、Reuters 嗎？',
+      a: '維訊透過全球 12,000+ 授權通訊社網絡發稿，涵蓋 AP News、Reuters 等頂級國際媒體。原則上可刊登於這些平台，但需符合各通訊社的編輯標準，內容須真實合法、可查證。維訊團隊會在發稿前協助審核內容，確保符合標準，最大化刊登成功率。'
+    },
+    {
+      q: '維訊的服務適合哪些產業或組織？',
+      a: '維訊的全球媒體發稿與 AI 數據服務適用於各類型組織，包括製造與外銷業、生技與醫療業、政府與公部門、科技與新創、品牌與消費品、教育與學術機構。只要有國際曝光需求，維訊均可提供對應的全託管服務。'
+    },
+    {
+      q: '維訊的服務需要客戶自己操作嗎？流程是什麼？',
+      a: '維訊提供 100% 全託管服務，客戶無需具備任何技術能力。流程為：諮詢規劃 → 內容審核 → 全球發稿 → AI 數據追蹤 → 成效報告交付。客戶全程只需提供資訊與確認內容，其餘由維訊全權執行。'
+    },
+    {
+      q: '單次發稿和訂閱方案有什麼差別？',
+      a: '單次專案適合有特定活動或新品發布需求的客戶，按次計費，靈活彈性。訂閱方案（季度或年約）適合需要持續國際曝光的客戶，享有優惠費率，並可搭配 AI 數據情報服務，建立長期品牌聲量。'
+    },
+    {
+      q: '企業訪客解密是什麼？怎麼運作？',
+      a: '企業訪客解密是維訊旗艦版的核心功能。當匿名企業訪客瀏覽客戶網站時，系統會自動識別該訪客所屬企業及所在國家，並記錄其瀏覽行為與停留時間。客戶可透過專屬智慧門戶即時查看訪客動態，系統同時自動觸發後續跟進行動，將匿名流量轉化為可追蹤的商機。'
+    },
+    {
+      q: '競爭對手監控可以追蹤什麼？',
+      a: '維訊的競爭對手 AI 動態監控可追蹤競爭對手的主要買家變動、市場貨量增減趨勢及供應鏈異動訊號。數據以月報形式定期交付，協助客戶掌握市場動態、即時調整策略。具體監控技術與數據來源屬維訊核心機密，不對外公開。'
+    },
+    {
+      q: 'AI 買手情報名單是怎麼產生的？準確嗎？',
+      a: '維訊透過整合全球多源商業數據與企業決策者資料庫，經 AI 自動篩選具有真實採購意圖的目標帳號，交付已驗證的採購決策者聯絡資料。名單準確度因目標市場而異，主要外銷市場覆蓋率高。具體數據來源與技術架構屬維訊核心機密，不對外公開。'
+    },
+    {
+      q: '買手情報覆蓋哪些市場？',
+      a: '維訊的買手情報服務覆蓋全球主要外銷目標市場，包含歐美、亞洲及新興市場。針對不同市場的數據開放程度，維訊採用多元數據補強策略，確保各市場的買手情報完整覆蓋。'
+    },
+    {
+      q: '維訊的成效報告包含哪些內容？',
+      a: '維訊定期交付的成效報告包含：全球媒體刊登清單與連結、各地區媒體覆蓋範圍摘要、以及 AI 數據追蹤重點整理。進階方案以上另含買手情報更新與市場動態摘要。報告格式固定清晰，方便客戶內部呈報或補助核銷使用。'
+    },
+  ];
+
+  return (
+    <section id="section-faq" className="w-full overflow-x-hidden bg-slate-light py-20 px-6 lg:pl-56">
+      <div className="max-w-3xl mx-auto">
+        <h2 className="font-playfair text-navy font-bold mb-4 text-center" style={{fontSize: "clamp(1.5rem, 4vw, 2.2rem)"}}>
+          常見問題
+        </h2>
+        <p className="font-inter text-text-muted text-center mb-12">關於維訊服務的常見疑問</p>
+        <div className="space-y-4">
+          {faqs.map((faq, i) => (
+            <div key={i} className="border border-navy/20 rounded-xl overflow-hidden">
+              <button
+                onClick={() => setOpenIndex(openIndex === i ? null : i)}
+                className="w-full px-6 py-4 text-left flex items-center justify-between bg-white hover:bg-navy/5 transition-colors"
+              >
+                <span className="font-inter font-semibold text-navy pr-4">{faq.q}</span>
+                <span className="text-gold font-bold text-xl flex-shrink-0">{openIndex === i ? '−' : '+'}</span>
+              </button>
+              {openIndex === i && (
+                <div className="px-6 py-4 bg-navy/5 border-t border-navy/10">
+                  <p className="font-inter text-text-muted leading-relaxed">{faq.a}</p>
+                </div>
+              )}
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
 function ContactSection() {
   const [formData, setFormData] = useState({ name: '', company: '', service: '', contact: '' });
   const [submitted, setSubmitted] = useState(false);
@@ -903,6 +977,8 @@ function App() {
         <Section5 />
         <SectionDivider />
         <Section6 />
+        <SectionDivider />
+        <FAQSection />
         <SectionDivider />
         <ContactSection />
         <SectionDivider />
