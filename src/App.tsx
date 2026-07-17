@@ -745,7 +745,7 @@ function Section6() {
 
 
 function FAQSection() {
-  const [openIndex, setOpenIndex] = React.useState<number | null>(null);
+  const [openIndex, setOpenIndex] = useState<number | null>(null);
 
   const faqs = [
     {
