@@ -93,7 +93,7 @@ const tiers = [
     features: [
       '全球 12,000+ 通訊社媒體發稿',
       '彈性選擇：單次專案 / 季度方案 / 年約方案',
-      '適合品牌活動、新品發布、觀光推廣',
+      '適合各行各業：製造外銷、生技醫療、政府機關、品牌活動、國際會議',
       '競爭對手市場動態監控',
       '標準媒體刊登成效報告（PDF）',
     ],
@@ -290,9 +290,16 @@ function Section1() {
           />
         </div>
 
-        <p className="font-inter text-white/75 text-lg md:text-xl max-w-2xl mx-auto mb-12 animate-fade-in leading-relaxed break-keep" style={{ animationDelay: '1s' }}>
-          以全球權威媒體為引，大數據為核心的 100% 全託管 B2B 數據增長引擎
+        <p className="font-inter text-white/75 text-lg md:text-xl max-w-2xl mx-auto mb-6 animate-fade-in leading-relaxed break-keep" style={{ animationDelay: '1s' }}>
+          以全球權威媒體為引，大數據為核心的 100% 全託管數據增長引擎
         </p>
+        <div className="flex flex-wrap justify-center gap-2 mb-12 animate-fade-in" style={{ animationDelay: '1.1s' }}>
+          {['製造外銷', '生技醫療', '政府機關', '品牌活動', '國際會議', '觀光推廣', '科技新創'].map((tag) => (
+            <span key={tag} className="font-inter text-xs text-gold/80 border border-gold/30 rounded-full px-3 py-1">
+              #{tag}
+            </span>
+          ))}
+        </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 sm:gap-8 mb-12 animate-fade-in" style={{ animationDelay: '1.2s' }}>
           <div className="text-center py-4 sm:py-0">
@@ -363,16 +370,16 @@ function Section2() {
           <div className="bg-white rounded-xl p-8 shadow-lg border border-gray-100">
             <h3 className="font-playfair text-gold text-xl font-semibold mb-6 flex items-center">
               <Building2 className="w-5 h-5 mr-2" />
-              台灣製造業的數位鴻溝
+              企業品牌的國際曝光困境
             </h3>
             <ul className="space-y-4">
               <li className="flex items-start text-text-dark">
                 <Building2 className="w-5 h-5 mr-3 text-red-500 flex-shrink-0 mt-0.5" />
-                <span>缺乏內部數據基礎設施</span>
+                <span>缺乏國際媒體資源與人脈</span>
               </li>
               <li className="flex items-start text-text-dark">
                 <Settings className="w-5 h-5 mr-3 text-red-500 flex-shrink-0 mt-0.5" />
-                <span>無自動化工程人力部署能力</span>
+                <span>不知道如何精準觸達海外目標客群</span>
               </li>
               <li className="flex items-start text-text-dark">
                 <XCircle className="w-5 h-5 mr-3 text-red-500 flex-shrink-0 mt-0.5" />
