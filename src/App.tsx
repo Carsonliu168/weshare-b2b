@@ -395,7 +395,7 @@ function Section2() {
 
         <div className="bg-navy rounded-xl p-8 border-l-4 border-gold">
           <p className="font-inter text-gold text-lg leading-relaxed">
-            維訊擁有全球 12,000+ 通訊社發稿資源，直接解決企業的國際曝光難題——再結合 AI 數據追蹤，讓每一篇新聞稿都成為可量化的商機入口。
+            維訊擁有全球 12,000+ 通訊社發稿資源，為企業、品牌與政府機關解決國際曝光難題——再結合 AI 數據追蹤，讓每一篇新聞稿都成為可量化的商機入口。
           </p>
         </div>
 
