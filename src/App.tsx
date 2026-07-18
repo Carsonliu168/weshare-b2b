@@ -138,6 +138,38 @@ const tiers = [
   },
 ];
 
+const mediaLogos = [
+  { name: 'AP', file: 'ap.png' },
+  { name: 'Reuters', file: 'reuters.png' },
+  { name: 'Yahoo', file: 'yahoo.png' },
+  { name: 'AFP', file: 'afp.png' },
+  { name: 'Financial Times', file: 'ft.png' },
+  { name: 'Benzinga', file: 'benzinga.png' },
+  { name: 'Asahi Shimbun', file: 'asahi.png' },
+  { name: 'JIJI Press', file: 'jiji.png' },
+  { name: 'Sankei News', file: 'sankei.png' },
+  { name: 'The Globe and Mail', file: 'globeandmail.png' },
+];
+
+function MediaLogoMarquee() {
+  const logos = [...mediaLogos, ...mediaLogos];
+  return (
+    <div className="mt-8 mb-4 overflow-hidden bg-white rounded-xl border border-gray-100 shadow-sm py-6">
+      <div className="marquee-track flex items-center gap-14 w-max">
+        {logos.map((logo, i) => (
+          <img
+            key={`${logo.name}-${i}`}
+            src={`/logos/${logo.file}`}
+            alt={logo.name}
+            title={logo.name}
+            className="h-10 md:h-12 w-auto object-contain flex-shrink-0 opacity-90 hover:opacity-100 transition-opacity"
+          />
+        ))}
+      </div>
+    </div>
+  );
+}
+
 function AnimatedCounter({ end, suffix = '', duration = 2000 }: { end: number; suffix?: string; duration?: number }) {
   const [count, setCount] = useState(0);
   const [isVisible, setIsVisible] = useState(false);
@@ -399,6 +431,8 @@ function Section2() {
             維訊擁有全球 12,000+ 通訊社發稿資源，為企業、品牌與政府機關解決國際曝光難題——再結合 AI 數據追蹤，讓每一篇新聞稿都成為可量化的商機入口。
           </p>
         </div>
+
+        <MediaLogoMarquee />
 
         {/* 媒體刊登實績 */}
         <div className="mt-12">
