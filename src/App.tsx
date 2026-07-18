@@ -154,15 +154,15 @@ const mediaLogos = [
 function MediaLogoMarquee() {
   const logos = [...mediaLogos, ...mediaLogos];
   return (
-    <div className="mt-8 mb-4 overflow-hidden bg-white rounded-xl border border-gray-100 shadow-sm py-6">
-      <div className="marquee-track flex items-center gap-14 w-max">
+    <div className="mt-8 mb-4 overflow-hidden bg-white rounded-xl border border-gray-100 shadow-sm py-4">
+      <div className="marquee-track flex items-center gap-10 w-max">
         {logos.map((logo, i) => (
           <img
             key={`${logo.name}-${i}`}
             src={`/logos/${logo.file}`}
             alt={logo.name}
             title={logo.name}
-            className="h-10 md:h-12 w-auto object-contain flex-shrink-0 opacity-90 hover:opacity-100 transition-opacity"
+            className="h-6 md:h-8 w-auto object-contain flex-shrink-0 opacity-90 hover:opacity-100 transition-opacity"
           />
         ))}
       </div>
