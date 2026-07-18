@@ -144,7 +144,7 @@ const mediaLogos = [
   { name: 'Yahoo', zh: '雅虎', file: 'yahoo.png' },
   { name: 'AFP', zh: '法新社', file: 'afp.png' },
   { name: 'Financial Times', zh: '金融時報', file: 'ft.png' },
-  { name: 'Digital Journal', zh: '加拿大數位', file: 'digitaljournal.png' },
+  { name: 'Digital Journal', zh: '加拿大數位', file: 'digitaljournal-v2.png' },
   { name: 'Asahi Shimbun', zh: '朝日新聞', file: 'asahi.png' },
   { name: 'JIJI Press', zh: '時事通訊社', file: 'jiji.png' },
   { name: 'Sankei News', zh: '產經新聞', file: 'sankei.png' },
