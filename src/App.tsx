@@ -361,10 +361,10 @@ function Section1() {
           進入實戰展示
           <ArrowUpRight className="inline-block ml-2 w-5 h-5" />
         </button>
-      </div>
 
-      <div className="mt-10 sm:mt-0 sm:absolute sm:bottom-8 sm:right-8 font-inter text-gold/60 text-xs animate-fade-in text-center sm:text-right" style={{ animationDelay: '1.6s' }}>
-        Powered by Weshare AI Intelligence
+        <div className="mt-6 text-center font-inter text-gold/60 text-xs animate-fade-in" style={{ animationDelay: '1.6s' }}>
+          Powered by Weshare AI Intelligence
+        </div>
       </div>
     </section>
   );
