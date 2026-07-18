@@ -139,31 +139,35 @@ const tiers = [
 ];
 
 const mediaLogos = [
-  { name: 'AP', file: 'ap.png' },
-  { name: 'Reuters', file: 'reuters.png' },
-  { name: 'Yahoo', file: 'yahoo.png' },
-  { name: 'AFP', file: 'afp.png' },
-  { name: 'Financial Times', file: 'ft.png' },
-  { name: 'Benzinga', file: 'benzinga.png' },
-  { name: 'Asahi Shimbun', file: 'asahi.png' },
-  { name: 'JIJI Press', file: 'jiji.png' },
-  { name: 'Sankei News', file: 'sankei.png' },
-  { name: 'The Globe and Mail', file: 'globeandmail.png' },
+  { name: 'AP', zh: '美聯社', file: 'ap.png' },
+  { name: 'Reuters', zh: '路透社', file: 'reuters.png' },
+  { name: 'Yahoo', zh: '雅虎', file: 'yahoo.png' },
+  { name: 'AFP', zh: '法新社', file: 'afp.png' },
+  { name: 'Financial Times', zh: '金融時報', file: 'ft.png' },
+  { name: 'Benzinga', zh: '美國財經媒體', file: 'benzinga.png' },
+  { name: 'Asahi Shimbun', zh: '朝日新聞', file: 'asahi.png' },
+  { name: 'JIJI Press', zh: '時事通訊社', file: 'jiji.png' },
+  { name: 'Sankei News', zh: '產經新聞', file: 'sankei.png' },
+  { name: 'The Globe and Mail', zh: '環球郵報', file: 'globeandmail.png' },
 ];
 
 function MediaLogoMarquee() {
   const logos = [...mediaLogos, ...mediaLogos];
   return (
     <div className="mt-8 mb-4 overflow-hidden bg-white rounded-xl border border-gray-100 shadow-sm py-4">
-      <div className="marquee-track flex items-center gap-10 w-max">
+      <div className="marquee-track flex items-start gap-10 w-max">
         {logos.map((logo, i) => (
-          <img
-            key={`${logo.name}-${i}`}
-            src={`/logos/${logo.file}`}
-            alt={logo.name}
-            title={logo.name}
-            className="h-6 md:h-8 w-auto object-contain flex-shrink-0 opacity-90 hover:opacity-100 transition-opacity"
-          />
+          <div key={`${logo.name}-${i}`} className="flex flex-col items-center flex-shrink-0">
+            <img
+              src={`/logos/${logo.file}`}
+              alt={logo.name}
+              title={logo.name}
+              className="h-6 md:h-8 w-auto object-contain opacity-90 hover:opacity-100 transition-opacity"
+            />
+            <span className="mt-1.5 font-inter text-[10px] md:text-xs text-text-muted/70 whitespace-nowrap">
+              {logo.zh}
+            </span>
+          </div>
         ))}
       </div>
     </div>
