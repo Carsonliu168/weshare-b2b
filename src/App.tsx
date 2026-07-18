@@ -296,7 +296,7 @@ function Section1() {
   return (
     <section
       id="section-1"
-      className="min-h-screen w-full overflow-x-hidden geometric-bg relative flex items-center justify-center py-20 px-6"
+      className="min-h-screen w-full overflow-x-hidden geometric-bg relative flex flex-col items-center justify-center py-20 px-6"
     >
       <Particles />
       <div className="hero-glow relative z-10 max-w-4xl mx-auto text-center">
@@ -361,10 +361,10 @@ function Section1() {
           進入實戰展示
           <ArrowUpRight className="inline-block ml-2 w-5 h-5" />
         </button>
+      </div>
 
-        <div className="mt-10 sm:mt-0 sm:absolute sm:bottom-8 sm:right-8 font-inter text-gold/60 text-xs animate-fade-in" style={{ animationDelay: '1.6s' }}>
-          Powered by Weshare AI Intelligence
-        </div>
+      <div className="mt-10 sm:mt-0 sm:absolute sm:bottom-8 sm:right-8 font-inter text-gold/60 text-xs animate-fade-in text-center sm:text-right" style={{ animationDelay: '1.6s' }}>
+        Powered by Weshare AI Intelligence
       </div>
     </section>
   );
