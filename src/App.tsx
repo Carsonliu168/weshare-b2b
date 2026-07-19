@@ -320,7 +320,7 @@ function Section1() {
         </div>
 
         <h2 className="font-playfair text-2xl md:text-3xl text-gold mb-8 animate-fade-in gold-glow" style={{ animationDelay: '0.6s' }}>
-          全球媒體聲量 × AI 數據智能 = 可量化的 B2B 商機
+          全球媒體聲量 × AI 數據智能 = 可量化的商機與影響力
         </h2>
 
         <div className="flex justify-center mb-8 animate-fade-in" style={{ animationDelay: '0.8s' }}>
@@ -435,7 +435,7 @@ function Section2() {
 
         <div className="bg-navy rounded-xl p-8 border-l-4 border-gold">
           <p className="font-inter text-gold text-lg leading-relaxed">
-            維訊透過全球 3,000+ 精選通訊社網絡發稿，其中涵蓋 Yahoo 財經、美聯社、路透社等月活躍用戶上億的頂級媒體平台。每篇稿件發布期間同步被 Google 等搜尋引擎收錄索引，強化曝光期間的國際能見度與搜尋觸及。
+            維訊透過全球 3,000+ 精選通訊社網絡發稿，為企業、品牌與政府機關解決國際曝光難題，其中涵蓋 Yahoo 財經、美聯社、路透社等月活躍用戶上億的頂級媒體平台。每篇稿件發布期間同步被 Google 等搜尋引擎收錄索引，強化曝光期間的國際能見度與搜尋觸及。
           </p>
         </div>
 
