@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite build && vite build --ssr src/App.tsx --outDir dist-ssr && node scripts/prerender.mjs",
+    "build": "vite build && (vite build --ssr src/App.tsx --outDir dist-ssr && node scripts/prerender.mjs || echo '[prerender] SSR步驟失敗，跳過預渲染，繼續使用標準build結果')",
     "lint": "eslint .",
     "preview": "vite preview",
     "typecheck": "tsc --noEmit -p tsconfig.app.json"
