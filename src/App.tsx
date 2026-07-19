@@ -48,7 +48,7 @@ const stages = [
     name: '權威奠基模組',
     english: 'Global PR Trust Bait',
     detail:
-      '部署全球 12,000+ 一線財經媒體發稿矩陣，以第三方公信力建立品牌權威基礎，為後續 ABM 觸達提供信任背書，大幅提升開信率與會議達成率。',
+      '部署全球 3,000+ 一線財經媒體發稿矩陣，以第三方公信力建立品牌權威基礎，為後續 ABM 觸達提供信任背書，大幅提升開信率與會議達成率。',
   },
   {
     number: '02',
@@ -92,7 +92,7 @@ const tiers = [
     subtitle: '全球媒體聲量方案',
     highlighted: false,
     features: [
-      '全球 12,000+ 通訊社媒體發稿',
+      '全球 3,000+ 通訊社媒體發稿',
       '彈性選擇：單次專案 / 季度方案 / 年約方案',
       '適合各行各業：製造外銷、生技醫療、政府機關、品牌活動、國際會議',
       '競爭對手市場動態監控',
@@ -108,7 +108,7 @@ const tiers = [
       'AI 精準買手名單與採購意圖情報交付',
       '目標市場採購決策者資料庫',
       'ABM 媒體歸因追蹤報告',
-      '全球 12,000+ 媒體發稿（進階版）',
+      '全球 3,000+ 媒體發稿（進階版）',
     ],
   },
   {
@@ -341,7 +341,7 @@ function Section1() {
 
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 sm:gap-8 mb-12 animate-fade-in" style={{ animationDelay: '1.2s' }}>
           <div className="text-center py-4 sm:py-0">
-            <AnimatedCounter end={12000} suffix="+" />
+            <AnimatedCounter end={3000} suffix="+" />
             <div className="font-inter text-white/70 text-sm mt-2">全球合作通訊社</div>
           </div>
           <div className="text-center py-4 sm:py-0">
@@ -433,7 +433,7 @@ function Section2() {
 
         <div className="bg-navy rounded-xl p-8 border-l-4 border-gold">
           <p className="font-inter text-gold text-lg leading-relaxed">
-            維訊擁有全球 12,000+ 通訊社發稿資源，為企業、品牌與政府機關解決國際曝光難題——再結合 AI 數據追蹤，讓每一篇新聞稿都成為可量化的商機入口。
+            維訊擁有全球 3,000+ 通訊社發稿資源，為企業、品牌與政府機關解決國際曝光難題——再結合 AI 數據追蹤，讓每一篇新聞稿都成為可量化的商機入口。
           </p>
         </div>
 
@@ -702,7 +702,7 @@ function Section5() {
               維訊國際數位
             </h3>
             <ul className="space-y-3">
-              {['100% 全託管執行', 'AI 數據驅動決策', '媒體 × ABM 完整閉環', '全球 12,000+ 通訊社矩陣', '零內部人力需求', '每月固定戰情報告'].map((item, i) => (
+              {['100% 全託管執行', 'AI 數據驅動決策', '媒體 × ABM 完整閉環', '全球 3,000+ 通訊社矩陣', '零內部人力需求', '每月固定戰情報告'].map((item, i) => (
                 <li key={i} className="flex items-center text-white">
                   <CheckCircle className="w-5 h-5 mr-3 text-gold" />
                   {item}
@@ -789,7 +789,7 @@ function FAQSection() {
   const faqs = [
     {
       q: '維訊的新聞稿發出去之後，會出現在哪些媒體？能保證上 AP、Reuters 嗎？',
-      a: '維訊透過全球 12,000+ 授權通訊社網絡發稿，涵蓋 AP News、Reuters 等頂級國際媒體。原則上可刊登於這些平台，但需符合各通訊社的編輯標準，內容須真實合法、可查證。維訊團隊會在發稿前協助審核內容，確保符合標準，最大化刊登成功率。'
+      a: '維訊透過全球 3,000+ 授權通訊社網絡發稿，涵蓋 AP News、Reuters 等頂級國際媒體。原則上可刊登於這些平台，但需符合各通訊社的編輯標準，內容須真實合法、可查證。維訊團隊會在發稿前協助審核內容，確保符合標準，最大化刊登成功率。'
     },
     {
       q: '維訊的服務適合哪些產業或組織？',
