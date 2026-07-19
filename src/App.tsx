@@ -330,7 +330,7 @@ function Section1() {
           />
         </div>
 
-        <p className="font-inter text-white/75 text-lg md:text-xl max-w-2xl mx-auto mb-6 animate-fade-in leading-relaxed break-keep" style={{ animationDelay: '1s' }}>
+        <p className="font-inter text-white/75 text-lg md:text-xl max-w-2xl mx-auto mb-6 animate-fade-in leading-relaxed" style={{ animationDelay: '1s' }}>
           維訊核心服務：全球新聞稿發布（涵蓋 AP、路透社等 3,000+ 媒體通訊社）、AI 海外買家與經銷商開發、競爭對手市場情報監控——為企業、政府機關與各類品牌提供國際曝光與市場拓展的全託管解決方案
         </p>
         <div className="flex flex-wrap justify-center gap-2 mb-12 animate-fade-in" style={{ animationDelay: '1.1s' }}>
