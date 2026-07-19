@@ -381,6 +381,37 @@ function Section2() {
           從品牌曝光到商機轉化
         </h2>
 
+        <div className="bg-navy rounded-xl p-8 border-l-4 border-gold mb-12">
+          <p className="font-inter text-gold text-lg leading-relaxed">
+            維訊透過全球 3,000+ 精選通訊社網絡發稿，為企業、品牌與政府機關解決國際曝光難題，其中涵蓋 Yahoo 財經、美聯社、路透社等月活躍用戶上億的頂級媒體平台。每篇稿件發布期間同步被 Google 等搜尋引擎收錄索引，強化曝光期間的國際能見度與搜尋觸及。
+          </p>
+        </div>
+
+        <MediaLogoMarquee />
+
+        {/* 媒體刊登實績 */}
+        <div className="mt-12 mb-16">
+          <h3 className="font-playfair text-2xl text-navy font-bold text-center mb-2">媒體刊登實績</h3>
+          <p className="font-inter text-text-muted text-center text-sm mb-8">以下為維訊實際協助客戶登上國際權威媒體之真實案例</p>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div className="rounded-xl overflow-hidden border-2 border-navy/20 shadow-lg">
+              <div className="bg-navy px-4 py-2 flex items-center gap-2">
+                <span className="font-inter text-white font-bold text-sm">AP</span>
+                <span className="font-inter text-white/70 text-xs">Associated Press · AP News</span>
+              </div>
+              <img src="/press-ap.jpg" alt="AP News 刊登截圖" className="w-full object-cover" />
+            </div>
+            <div className="rounded-xl overflow-hidden border-2 border-navy/20 shadow-lg">
+              <div className="bg-[#FF8000] px-4 py-2 flex items-center gap-2">
+                <span className="font-inter text-white font-bold text-sm">Reuters</span>
+                <span className="font-inter text-white/70 text-xs">路透社 · 全球最大通訊社</span>
+              </div>
+              <img src="/press-reuters.jpg" alt="Reuters 刊登截圖" className="w-full object-cover" />
+            </div>
+          </div>
+          <p className="font-inter text-text-muted text-center text-xs mt-4">* 客戶資料依保密協議處理，媒體刊登內容均為真實案例</p>
+        </div>
+
         <div className="grid md:grid-cols-2 gap-8 mb-12">
           <div className="bg-white rounded-xl p-8 shadow-lg border border-gray-100">
             <h3 className="font-playfair text-gold text-xl font-semibold mb-6 flex items-center">
@@ -435,33 +466,8 @@ function Section2() {
 
         <div className="bg-navy rounded-xl p-8 border-l-4 border-gold">
           <p className="font-inter text-gold text-lg leading-relaxed">
-            維訊透過全球 3,000+ 精選通訊社網絡發稿，為企業、品牌與政府機關解決國際曝光難題，其中涵蓋 Yahoo 財經、美聯社、路透社等月活躍用戶上億的頂級媒體平台。每篇稿件發布期間同步被 Google 等搜尋引擎收錄索引，強化曝光期間的國際能見度與搜尋觸及。
+            維訊如何解決以上問題：全球 3,000+ 精選通訊社網絡讓品牌聲量透過 Google 收錄與 AI 買家意圖追蹤直接轉化為可量化商機——不必負擔昂貴的國際展會成本，也不需要企業自建技術團隊，維訊以 100% 全託管服務，主動識別曝光後的潛在買家身份，取代難以歸因的傳統 PR 操作。
           </p>
-        </div>
-
-        <MediaLogoMarquee />
-
-        {/* 媒體刊登實績 */}
-        <div className="mt-12">
-          <h3 className="font-playfair text-2xl text-navy font-bold text-center mb-2">媒體刊登實績</h3>
-          <p className="font-inter text-text-muted text-center text-sm mb-8">以下為維訊實際協助客戶登上國際權威媒體之真實案例</p>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <div className="rounded-xl overflow-hidden border-2 border-navy/20 shadow-lg">
-              <div className="bg-navy px-4 py-2 flex items-center gap-2">
-                <span className="font-inter text-white font-bold text-sm">AP</span>
-                <span className="font-inter text-white/70 text-xs">Associated Press · AP News</span>
-              </div>
-              <img src="/press-ap.jpg" alt="AP News 刊登截圖" className="w-full object-cover" />
-            </div>
-            <div className="rounded-xl overflow-hidden border-2 border-navy/20 shadow-lg">
-              <div className="bg-[#FF8000] px-4 py-2 flex items-center gap-2">
-                <span className="font-inter text-white font-bold text-sm">Reuters</span>
-                <span className="font-inter text-white/70 text-xs">路透社 · 全球最大通訊社</span>
-              </div>
-              <img src="/press-reuters.jpg" alt="Reuters 刊登截圖" className="w-full object-cover" />
-            </div>
-          </div>
-          <p className="font-inter text-text-muted text-center text-xs mt-4">* 客戶資料依保密協議處理，媒體刊登內容均為真實案例</p>
         </div>
       </div>
     </section>
