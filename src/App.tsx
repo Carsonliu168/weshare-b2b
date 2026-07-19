@@ -93,6 +93,8 @@ const tiers = [
     highlighted: false,
     features: [
       '全球 3,000+ 通訊社媒體發稿',
+      '涵蓋 Yahoo 財經、美聯社、路透社等頂級高觸及媒體',
+      '刊登期間同步被 Google 等搜尋引擎收錄索引',
       '彈性選擇：單次專案 / 季度方案 / 年約方案',
       '適合各行各業：製造外銷、生技醫療、政府機關、品牌活動、國際會議',
       '競爭對手市場動態監控',
@@ -433,7 +435,7 @@ function Section2() {
 
         <div className="bg-navy rounded-xl p-8 border-l-4 border-gold">
           <p className="font-inter text-gold text-lg leading-relaxed">
-            維訊擁有全球 3,000+ 通訊社發稿資源，為企業、品牌與政府機關解決國際曝光難題——再結合 AI 數據追蹤，讓每一篇新聞稿都成為可量化的商機入口。
+            維訊透過全球 3,000+ 精選通訊社網絡發稿，其中涵蓋單次觸及可達數十億人次的頂級媒體（如 Yahoo 財經、美聯社、路透社等）。每篇稿件發布期間同步被 Google 等搜尋引擎收錄索引，強化曝光期間的國際能見度與搜尋觸及。
           </p>
         </div>
 
