@@ -590,7 +590,7 @@ function Section4() {
                   <span className="text-white/50 text-sm">停留 {visitor.time}</span>
                   {visitor.triggered && (
                     <span className="blink-badge bg-red-500/20 text-red-400 text-xs px-3 py-1 rounded-full font-semibold whitespace-nowrap">
-                      🔴 AI 已自動通知業務團隊跟進
+                      🔴 已標記為高優先商機
                     </span>
                   )}
                 </div>
