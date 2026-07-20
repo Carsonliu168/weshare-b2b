@@ -331,7 +331,7 @@ function Section1() {
         </div>
 
         <p className="font-inter text-white/75 text-lg md:text-xl max-w-2xl mx-auto mb-6 animate-fade-in leading-relaxed" style={{ animationDelay: '1s' }}>
-          維訊核心服務：全球新聞稿發布（涵蓋 AP、路透社等 3,000+ 媒體通訊社）、AI 海外買家與經銷商開發、競爭對手市場情報監控——為企業、政府機關與各類品牌提供國際曝光與市場拓展的全託管解決方案
+          維訊核心服務：全球新聞稿發布（涵蓋 AP、路透社等 3,000+ 媒體通訊社）、AI 海外買家與經銷商開發、競爭對手市場情報監控——為企業、政府機關與各類品牌提供國際曝光與市場拓展的代操解決方案
         </p>
         <div className="flex flex-wrap justify-center gap-2 mb-12 animate-fade-in" style={{ animationDelay: '1.1s' }}>
           {['製造外銷', '生技醫療', '政府機關', '品牌活動', '國際會議', '觀光推廣', '科技新創'].map((tag) => (
@@ -348,7 +348,7 @@ function Section1() {
           </div>
           <div className="text-center py-4 sm:py-0">
             <AnimatedCounter end={100} suffix="%" />
-            <div className="font-inter text-white/70 text-sm mt-2">全託管執行</div>
+            <div className="font-inter text-white/70 text-sm mt-2">代為執行</div>
           </div>
           <div className="text-center py-4 sm:py-0">
             <AnimatedCounter end={4} />
@@ -677,7 +677,7 @@ function Section6() {
     <section id="section-6" className="min-h-screen w-full overflow-x-hidden bg-slate-light py-20 px-6 lg:pl-56">
       <div className="max-w-6xl mx-auto">
         <h2 className="font-playfair text-2xl md:text-3xl text-navy font-bold mb-4 text-center" style={{fontSize: "clamp(1.5rem, 4vw, 2.2rem)"}}>
-          階梯式全託管方案規劃
+          階梯式代操方案規劃
         </h2>
         <p className="font-inter text-text-muted text-center mb-12">
           依業務規模與目標市場量身規劃，所有方案均由維訊全程代為執行
@@ -743,7 +743,7 @@ function FAQSection() {
     },
     {
       q: '維訊的服務適合哪些產業或組織？',
-      a: '維訊的全球媒體發稿與 AI 數據服務適用於各類型組織，包括製造與外銷業、生技與醫療業、政府與公部門、科技與新創、品牌與消費品、教育與學術機構。只要有國際曝光需求，維訊均可提供對應的全託管服務。'
+      a: '維訊的全球媒體發稿與 AI 數據服務適用於各類型組織，包括製造與外銷業、生技與醫療業、政府與公部門、科技與新創、品牌與消費品、教育與學術機構。只要有國際曝光需求，維訊均可提供對應的代操服務。'
     },
     {
       q: '維訊的服務需要客戶自己操作嗎？流程是什麼？',
