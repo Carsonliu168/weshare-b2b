@@ -411,64 +411,6 @@ function Section2() {
           </div>
           <p className="font-inter text-text-muted text-center text-xs mt-4">* 客戶資料依保密協議處理，媒體刊登內容均為真實案例</p>
         </div>
-
-        <div className="grid md:grid-cols-2 gap-8 mb-12">
-          <div className="bg-white rounded-xl p-8 shadow-lg border border-gray-100">
-            <h3 className="font-playfair text-gold text-xl font-semibold mb-6 flex items-center">
-              <TrendingDown className="w-5 h-5 mr-2" />
-              傳統全球 PR 的極限
-            </h3>
-            <ul className="space-y-4">
-              <li className="flex items-start text-text-dark">
-                <TrendingDown className="w-5 h-5 mr-3 text-red-500 flex-shrink-0 mt-0.5" />
-                <span>品牌聲量難以量化轉換</span>
-              </li>
-              <li className="flex items-start text-text-dark">
-                <Search className="w-5 h-5 mr-3 text-red-500 flex-shrink-0 mt-0.5" />
-                <span>缺乏多觸點追蹤與直接歸因</span>
-              </li>
-              <li className="flex items-start text-text-dark">
-                <DollarSign className="w-5 h-5 mr-3 text-red-500 flex-shrink-0 mt-0.5" />
-                <span>國際展會成本高漲，ROI 持續下滑</span>
-              </li>
-              <li className="flex items-start text-text-dark">
-                <User className="w-5 h-5 mr-3 text-red-500 flex-shrink-0 mt-0.5" />
-                <span>曝光後無法識別潛在買家身份</span>
-              </li>
-            </ul>
-          </div>
-
-          <div className="bg-white rounded-xl p-8 shadow-lg border border-gray-100">
-            <h3 className="font-playfair text-gold text-xl font-semibold mb-6 flex items-center">
-              <Building2 className="w-5 h-5 mr-2" />
-              企業品牌的國際曝光困境
-            </h3>
-            <ul className="space-y-4">
-              <li className="flex items-start text-text-dark">
-                <Building2 className="w-5 h-5 mr-3 text-red-500 flex-shrink-0 mt-0.5" />
-                <span>缺乏國際媒體資源與人脈</span>
-              </li>
-              <li className="flex items-start text-text-dark">
-                <Settings className="w-5 h-5 mr-3 text-red-500 flex-shrink-0 mt-0.5" />
-                <span>不知道如何精準觸達海外目標客群</span>
-              </li>
-              <li className="flex items-start text-text-dark">
-                <XCircle className="w-5 h-5 mr-3 text-red-500 flex-shrink-0 mt-0.5" />
-                <span>需要的不是又一個 SaaS 平台</span>
-              </li>
-              <li className="flex items-start text-text-dark">
-                <CheckCircle className="w-5 h-5 mr-3 text-green-500 flex-shrink-0 mt-0.5" />
-                <span>需要 100% 全託管交鑰匙服務（Done-For-You）</span>
-              </li>
-            </ul>
-          </div>
-        </div>
-
-        <div className="bg-navy rounded-xl p-8 border-l-4 border-gold">
-          <p className="font-inter text-gold text-lg leading-relaxed">
-            維訊如何解決以上問題：全球 3,000+ 精選通訊社網絡讓品牌聲量透過 Google 收錄與 AI 買家意圖追蹤直接轉化為可量化商機——不必負擔昂貴的國際展會成本，也不需要企業自建技術團隊，維訊以 100% 全託管服務，主動識別曝光後的潛在買家身份，取代難以歸因的傳統 PR 操作。
-          </p>
-        </div>
       </div>
     </section>
   );
@@ -667,10 +609,10 @@ function Section5() {
       <Particles />
       <div className="max-w-6xl mx-auto relative z-10">
         <h2 className="font-playfair text-white font-bold mb-4 text-center" style={{fontSize: "clamp(1.5rem, 4vw, 2.2rem)"}}>
-          台灣 B2B 市場格局與生態位互補
+          維訊國際數位的優勢
         </h2>
         <p className="font-inter text-gold text-center mb-12">
-          維訊的市場定位：企業國際化的 B2B 數據科技夥伴
+          與傳統做法相比，維訊如何解決品牌國際曝光與商機轉化的痛點
         </p>
 
         <div className="grid md:grid-cols-3 gap-6 mb-8">
@@ -679,7 +621,7 @@ function Section5() {
               傳統 PR 公關公司
             </h3>
             <ul className="space-y-3">
-              {['無數據科技底層', '無買家身份識別', '無 ABM 自動化', '依賴人工執行', '無閉環歸因報告', '無全球媒體矩陣'].map((item, i) => (
+              {['品牌聲量難以量化轉換', '無買家身份識別', '無 ABM 自動化', '依賴人工執行，缺乏歸因報告', '國際展會成本高漲，ROI 下滑', '無全球媒體矩陣'].map((item, i) => (
                 <li key={i} className="flex items-center text-white/70">
                   <XCircle className="w-5 h-5 mr-3 text-red-400" />
                   {item}
@@ -693,7 +635,7 @@ function Section5() {
               SaaS 軟體經銷商
             </h3>
             <ul className="space-y-3">
-              {['需客戶自行操作', '學習曲線陡峭', '無託管執行服務', '需內部技術人員', '數據分散難整合', '無媒體發佈資源'].map((item, i) => (
+              {['需客戶自行操作', '學習曲線陡峭', '無託管執行服務', '不知道如何精準觸達海外客群', '數據分散難整合', '無媒體發佈資源'].map((item, i) => (
                 <li key={i} className="flex items-center text-white/70">
                   <XCircle className="w-5 h-5 mr-3 text-red-400" />
                   {item}
@@ -710,7 +652,7 @@ function Section5() {
               維訊國際數位
             </h3>
             <ul className="space-y-3">
-              {['100% 全託管執行', 'AI 數據驅動決策', '媒體 × ABM 完整閉環', '全球 3,000+ 通訊社矩陣', '零內部人力需求', '每月固定戰情報告'].map((item, i) => (
+              {['100% 全託管執行（Done-For-You）', 'AI 買家意圖識別與追蹤', '媒體 × 商機情報整合', '全球 3,000+ 通訊社矩陣', '零內部人力需求', '每月固定戰情報告'].map((item, i) => (
                 <li key={i} className="flex items-center text-white">
                   <CheckCircle className="w-5 h-5 mr-3 text-gold" />
                   {item}
