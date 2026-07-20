@@ -33,10 +33,10 @@ const abmData = [
 
 const navItems = [
   { id: 'section-1', label: '執行總覽' },
-  { id: 'section-2', label: '痛點分析' },
+  { id: 'section-2', label: '媒體實績' },
+  { id: 'section-5', label: '競爭優勢' },
   { id: 'section-3', label: '四階增長引擎' },
   { id: 'section-4', label: '戰情月報' },
-  { id: 'section-5', label: '生態位佈局' },
   { id: 'section-6', label: '方案規劃' },
   { id: 'section-faq', label: '常見問題' },
   { id: 'section-contact', label: '立即諮詢' },
@@ -963,11 +963,11 @@ function App() {
         <SectionDivider />
         <Section2 />
         <SectionDivider />
+        <Section5 />
+        <SectionDivider />
         <Section3 />
         <SectionDivider />
         <Section4 />
-        <SectionDivider />
-        <Section5 />
         <SectionDivider />
         <Section6 />
         <SectionDivider />
