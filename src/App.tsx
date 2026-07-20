@@ -60,7 +60,7 @@ const stages = [
   {
     number: '03',
     name: 'AI 目標帳號行銷矩陣',
-    english: 'AI-Powered ABM Orchestration',
+    english: 'AI-Powered Account Intelligence',
     detail:
       '運用 AI 模型自動擴充高管個人檔案，透過多源資料接力查找補齊職稱、決策權重與聯繫方式，交付客戶業務團隊即可直接展開的高精準溝通名單。',
   },
@@ -109,7 +109,7 @@ const tiers = [
       '含基礎版全部內容',
       'AI 精準買手名單與採購意圖情報交付',
       '目標市場採購決策者資料庫',
-      'ABM 媒體歸因追蹤報告',
+      'ABI 買家意圖追蹤報告',
       '全球 3,000+ 媒體發稿（進階版）',
     ],
   },
@@ -424,7 +424,7 @@ function Section3() {
       <Particles />
       <div className="max-w-6xl mx-auto relative z-10">
         <h2 className="font-playfair text-white font-bold mb-16 text-center" style={{fontSize: "clamp(1.1rem, 3.5vw, 2.2rem)"}}>
-          維訊數據閉環：全路徑商機獵殺
+          維訊數據引擎：全路徑商機獵殺
         </h2>
 
         <div className="grid md:grid-cols-4 gap-4 mb-8">
@@ -526,7 +526,7 @@ function Section4() {
           <div className="gradient-card rounded-xl border-t-2 border-gold p-6">
             <h3 className="font-inter text-gold text-lg font-semibold mb-4 flex items-center">
               <TrendingDown className="w-5 h-5 mr-2" />
-              ABM 流量與媒體歸因圖表
+              ABI 流量與媒體來源分析圖表
             </h3>
             <div className="h-48">
               <ResponsiveContainer width="100%" height="100%">
@@ -567,7 +567,7 @@ function Section4() {
               </ResponsiveContainer>
             </div>
             <p className="font-inter text-white/50 text-xs text-center mt-2">
-              Y軸：ABM 觸達轉換率 %
+              Y軸：ABI 觸達識別率 %
             </p>
           </div>
         </div>
@@ -652,7 +652,7 @@ function Section5() {
               維訊國際數位
             </h3>
             <ul className="space-y-3">
-              {['100% 全託管執行（Done-For-You）', 'AI 買家意圖識別與追蹤', '媒體 × 商機情報整合', '全球 3,000+ 通訊社矩陣', '零內部人力需求', '每月固定戰情報告'].map((item, i) => (
+              {['100% 全託管執行（Done-For-You）', 'AI 買家意圖識別與追蹤', '媒體 × 商機情報整合', '全球 3,000+ 通訊社矩陣', '零技術/數據人力需求', '每月固定戰情報告'].map((item, i) => (
                 <li key={i} className="flex items-center text-white">
                   <CheckCircle className="w-5 h-5 mr-3 text-gold" />
                   {item}
