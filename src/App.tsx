@@ -652,7 +652,7 @@ function Section5() {
               維訊國際數位
             </h3>
             <ul className="space-y-3">
-              {['100% 全託管執行（Done-For-You）', 'AI 買家意圖識別與追蹤', '媒體 × 商機情報整合', '全球 3,000+ 通訊社矩陣', '零技術/數據人力需求', '每月固定戰情報告'].map((item, i) => (
+              {['全程代為執行（Done-For-You）', 'AI 買家意圖識別與追蹤', '媒體 × 商機情報整合', '全球 3,000+ 通訊社矩陣', '零技術/數據人力需求', '每月固定戰情報告'].map((item, i) => (
                 <li key={i} className="flex items-center text-white">
                   <CheckCircle className="w-5 h-5 mr-3 text-gold" />
                   {item}
@@ -664,7 +664,7 @@ function Section5() {
 
         <div className="bg-navy rounded-xl p-8 border border-gold/40">
           <p className="font-inter text-gold text-lg text-center leading-relaxed">
-            維訊提供一站式全託管服務，無需企業內部建立技術團隊，直接交付可量化的國際商機轉化結果。
+            維訊全程代為執行，客戶無需企業內部建立技術團隊，專注於接收與運用商機情報。
           </p>
         </div>
       </div>
@@ -680,7 +680,7 @@ function Section6() {
           階梯式全託管方案規劃
         </h2>
         <p className="font-inter text-text-muted text-center mb-12">
-          依業務規模與目標市場量身規劃，所有方案均為 100% 全託管執行
+          依業務規模與目標市場量身規劃，所有方案均由維訊全程代為執行
         </p>
 
         <div className="grid md:grid-cols-2 gap-6">
@@ -747,7 +747,7 @@ function FAQSection() {
     },
     {
       q: '維訊的服務需要客戶自己操作嗎？流程是什麼？',
-      a: '維訊提供 100% 全託管服務，客戶無需具備任何技術能力。流程為：諮詢規劃 → 內容審核 → 全球發稿 → AI 買家意圖追蹤 → 成效報告交付。客戶全程只需提供資訊與確認內容，其餘由維訊全權執行。'
+      a: '維訊全程代為執行，客戶無需具備任何技術能力。流程為：諮詢規劃 → 內容審核 → 全球發稿 → AI 買家意圖追蹤 → 成效報告交付。客戶全程只需提供資訊與確認內容，其餘流程由維訊代為處理。'
     },
     {
       q: '單次發稿和訂閱方案有什麼差別？',
