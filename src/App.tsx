@@ -690,7 +690,7 @@ function Section6() {
           {tiers.map((tier, i) => (
             <div
               key={i}
-              className={`rounded-xl p-8 transition-all duration-300 card-hover relative ${
+              className={`rounded-xl p-8 transition-all duration-300 card-hover relative flex flex-col ${
                 tier.highlighted
                   ? 'bg-navy border-2 border-gold gold-box-glow'
                   : 'bg-white border-2 border-navy/20'
@@ -709,7 +709,7 @@ function Section6() {
                   {tier.subtitle}
                 </p>
               </div>
-              <ul className="space-y-3 mb-8">
+              <ul className="space-y-3 mb-8 flex-1">
                 {tier.features.map((feature, j) => (
                   <li key={j} className={`flex items-start ${tier.highlighted ? 'text-white' : 'text-text-dark'}`}>
                     <CheckCircle className={`w-5 h-5 mr-3 flex-shrink-0 ${tier.highlighted ? 'text-gold' : 'text-navy'}`} />
