@@ -425,7 +425,7 @@ function Section3() {
       <Particles />
       <div className="max-w-6xl mx-auto relative z-10">
         <h2 className="font-playfair text-white font-bold mb-16 text-center" style={{fontSize: "clamp(1.1rem, 3.5vw, 2.2rem)"}}>
-          維訊數據引擎：全路徑商機獵殺
+          維訊數據引擎：全路徑商機鎖定
         </h2>
 
         <div className="grid md:grid-cols-4 gap-4 mb-8">
