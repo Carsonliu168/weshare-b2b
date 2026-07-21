@@ -121,7 +121,7 @@ const tiers = [
     features: [
       '含進階版全部內容',
       '企業訪客 IP 反向解密系統',
-      '客戶專屬智慧門戶存取',
+      '定期戰情報告交付',
       '固定格式月度策略洞察報告',
       '全球展會通路夥伴與競爭情報彙整',
       '訪客動態自動通知與戰情彙整',
@@ -477,14 +477,14 @@ function Section4() {
           維訊全球商務戰情月報 Live Demo
         </h2>
         <p className="font-inter text-text-muted text-center mb-12">
-          以下為客戶專屬智慧門戶示意介面
+          以下為維訊內部監控台示意（客戶實際收到的是定期彙整的戰情報告）
         </p>
 
         <div className="grid md:grid-cols-2 gap-6 mb-6">
           <div className="gradient-card rounded-xl border-t-2 border-gold p-6">
             <h3 className="font-inter text-gold text-lg font-semibold mb-4 flex items-center">
               <BarChart3 className="w-5 h-5 mr-2" />
-              全球海關提單異動警報
+              全球海關提單月度監控分析
             </h3>
             <div className="overflow-x-auto">
               <table className="w-full text-sm">
@@ -568,6 +568,9 @@ function Section4() {
             </div>
             <p className="font-inter text-white/50 text-xs text-center mt-2">
               Y軸：ABI 觸達識別率 %
+            </p>
+            <p className="font-inter text-gold/70 text-xs text-center mt-1">
+              隨訂閱期間持續累積，趨勢洞察將越發完整——這正是長期合作的核心價值
             </p>
           </div>
         </div>
@@ -755,7 +758,7 @@ function FAQSection() {
     },
     {
       q: '企業訪客解密是什麼？怎麼運作？',
-      a: '企業訪客解密是維訊旗艦版的核心功能。當匿名企業訪客瀏覽客戶網站時，系統會自動識別該訪客所屬企業及所在國家，並記錄其瀏覽行為與停留時間。客戶可透過專屬智慧門戶即時查看訪客動態，系統同時自動通知業務團隊並彙整進戰情報告，將匿名流量轉化為可追蹤的商機。'
+      a: '企業訪客解密是維訊旗艦版的核心功能。當匿名企業訪客瀏覽客戶網站時，系統會自動識別該訪客所屬企業及所在國家，並記錄其瀏覽行為與停留時間。維訊團隊同時彙整訪客動態，定期整理進戰情報告，將匿名流量轉化為可追蹤的商機。'
     },
     {
       q: '競爭對手監控可以追蹤什麼？',
