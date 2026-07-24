@@ -670,7 +670,7 @@ function Section5() {
 
         <div className="bg-navy rounded-xl p-8 border border-gold/40">
           <p className="font-inter text-gold text-lg text-center leading-relaxed">
-            維訊全程代為執行，客戶無需企業內部建立技術團隊、無需追趕AI工具汰換浪潮，只需專注本業產品研發，接收並運用維訊持續為您掌握的商機情報，精準掌握市場動脈，搶佔先機。
+            維訊全程代為執行，客戶無需企業內部建立技術團隊、無需追趕AI工具汰換浪潮，只需專注本業產品研發，接收並運用維訊持續為您掌握的商機情報，精準掌握市場動脈。
           </p>
         </div>
       </div>
