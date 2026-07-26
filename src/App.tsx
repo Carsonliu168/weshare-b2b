@@ -153,6 +153,8 @@ const mediaLogos = [
   { name: 'Asahi Shimbun', zh: '朝日新聞', file: 'asahi.png' },
   { name: 'JIJI Press', zh: '時事通訊社', file: 'jiji.png' },
   { name: 'Sankei News', zh: '產經新聞', file: 'sankei.png' },
+  { name: 'JoongAng Ilbo', zh: '中央日報', file: 'joongang.png' },
+  { name: 'Chosun Ilbo', zh: '朝鮮日報', file: 'chosun.png' },
 ];
 
 function MediaLogoMarquee() {
