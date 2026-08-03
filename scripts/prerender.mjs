@@ -1,36 +1,81 @@
 // 自動化預渲染腳本
-// 用 React 官方 SSR 功能，把 App 元件算成靜態 HTML，塞進 build 完的 index.html 裡
-// 這樣爬蟲（NotebookLM、部分搜尋引擎）不需要執行 JavaScript 就能讀到完整內容
+// 用 React 官方 SSR 功能，把各路由頁面算成靜態 HTML，各自輸出成獨立的 index.html
+// 這樣爬蟲（Google、NotebookLM 等）不需要執行 JavaScript 就能讀到完整內容，
+// 而且 /pricing、/faq 等網址直接訪問或重新整理時，伺服器也能直接找到對應的靜態頁面。
 // 每次 `npm run build` 都會自動重新執行，永遠跟最新的網站內容同步，不會有過期問題
 
 import { renderToString } from 'react-dom/server';
-import { readFileSync, writeFileSync } from 'fs';
-import { resolve } from 'path';
+import { StaticRouter } from 'react-router-dom';
+import { readFileSync, writeFileSync, mkdirSync } from 'fs';
+import { resolve, dirname } from 'path';
 import { fileURLToPath } from 'url';
 import React from 'react';
 
 const __dirname = fileURLToPath(new URL('.', import.meta.url));
 const root = resolve(__dirname, '..');
 
+// 每個路由的路徑、對應的元件、以及各自的 SEO meta 資訊
+const routes = [
+  {
+    path: '/',
+    url: 'https://www.weshareai.tw/',
+    componentKey: 'HomePage',
+    outFile: 'dist/index.html',
+    title: '維訊國際數位 | Weshare International Digital',
+    description: '全球 3,000+ 通訊社媒體發稿，結合 AI 數據智能，為企業、品牌與政府機關提供國際媒體曝光與 B2B 買家情報訂閱服務。',
+  },
+  {
+    path: '/pricing',
+    url: 'https://www.weshareai.tw/pricing',
+    componentKey: 'Pricing',
+    outFile: 'dist/pricing/index.html',
+    title: '訂閱方案 | 維訊國際數位',
+    description: '四種買家情報訂閱方案，依業務規模與目標市場量身規劃。基礎版、進階版、專業版、旗艦版，先了解需求再配置合適方案。',
+  },
+  {
+    path: '/faq',
+    url: 'https://www.weshareai.tw/faq',
+    componentKey: 'FAQ',
+    outFile: 'dist/faq/index.html',
+    title: '常見問題 | 維訊國際數位',
+    description: '關於維訊全球媒體發稿、AI 買家情報服務、戰情報告交付流程的常見問題整理。',
+  },
+];
+
 async function main() {
-  // 讀取 SSR 打包好的 App 元件
-  const { default: App } = await import(resolve(root, 'dist-ssr/App.js'));
+  const { HomePage, Pricing, FAQ } = await import(resolve(root, 'dist-ssr/ssr-entry.js'));
+  const components = { HomePage, Pricing, FAQ };
 
-  // 渲染成靜態 HTML 字串
-  const appHtml = renderToString(React.createElement(App));
-
-  // 讀取 build 完的 index.html
   const indexPath = resolve(root, 'dist/index.html');
-  let html = readFileSync(indexPath, 'utf-8');
+  const templateHtml = readFileSync(indexPath, 'utf-8');
 
-  // 把 <div id="root"></div> 換成含有完整內容的版本
-  html = html.replace(
-    '<div id="root"></div>',
-    `<div id="root">${appHtml}</div>`
-  );
+  for (const route of routes) {
+    const Component = components[route.componentKey];
+    const appHtml = renderToString(
+      React.createElement(
+        StaticRouter,
+        { location: route.path },
+        React.createElement(Component)
+      )
+    );
 
-  writeFileSync(indexPath, html, 'utf-8');
-  console.log(`[prerender] 完成，注入內容長度: ${appHtml.length} 字元`);
+    let html = templateHtml
+      .replace('<div id="root"></div>', `<div id="root">${appHtml}</div>`)
+      .replace(/<title>.*?<\/title>/, `<title>${route.title}</title>`)
+      .replace(
+        /<meta name="description" content=".*?" \/>/,
+        `<meta name="description" content="${route.description}" />`
+      )
+      .replace(
+        /<link rel="canonical" href=".*?" \/>/,
+        `<link rel="canonical" href="${route.url}" />`
+      );
+
+    const outPath = resolve(root, route.outFile);
+    mkdirSync(dirname(outPath), { recursive: true });
+    writeFileSync(outPath, html, 'utf-8');
+    console.log(`[prerender] ${route.path} 完成，注入內容長度: ${appHtml.length} 字元 → ${route.outFile}`);
+  }
 }
 
 main().catch((err) => {

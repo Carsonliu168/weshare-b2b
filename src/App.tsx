@@ -1,4 +1,8 @@
 import { useEffect, useRef, useState } from 'react';
+import { BrowserRouter, Routes, Route, Link, useLocation } from 'react-router-dom';
+import TopNav from './components/TopNav';
+import Pricing from './pages/Pricing';
+import FAQ from './pages/FAQ';
 import {
   TrendingDown,
   Search,
@@ -86,63 +90,8 @@ const visitors = [
   { country: '🇬🇧', company: 'Travis Perkins（英國）', page: '詢價聯絡頁', time: '6 分 54 秒', triggered: true },
 ];
 
-const tiers = [
-  {
-    title: '基礎版',
-    subtitle: '全球媒體聲量方案',
-    highlighted: false,
-    features: [
-      '全球 3,000+ 通訊社媒體發稿',
-      '涵蓋 Yahoo 財經、美聯社、路透社等月活躍用戶上億的頂級媒體平台',
-      '刊登期間同步被 Google 等搜尋引擎收錄索引',
-      '彈性選擇：單次專案 / 季度方案 / 年約方案',
-      '適合各行各業：製造外銷、生技醫療、政府機關、品牌活動、國際會議',
-      '標準媒體刊登成效報告（PDF）',
-      '維訊精選每日晨間情報：全球經濟事件與產業新聞精選（2分鐘掌握市場動態）',
-    ],
-  },
-  {
-    title: '進階版',
-    subtitle: '定向情報服務',
-    highlighted: false,
-    features: [
-      '含基礎版全部內容',
-      'AI 精準買手名單與採購意圖情報交付',
-      '目標市場採購決策者資料庫',
-      'ABI 買家意圖追蹤報告',
-      '競爭對手媒體動態監控（新聞事件追蹤彙整）',
-      '全球 3,000+ 媒體發稿（進階版）',
-      '晨間情報進階版：加入維訊精選買家動態提醒',
-    ],
-  },
-  {
-    title: '專業版',
-    subtitle: '匿名解密戰情室',
-    highlighted: true,
-    badge: '主力推薦',
-    features: [
-      '含進階版全部內容',
-      '企業訪客 IP 反向解密系統',
-      '定期戰情報告交付',
-      '固定格式月度策略洞察報告',
-      '全球展會通路夥伴與競爭情報彙整',
-      '訪客動態自動通知與戰情彙整',
-    ],
-  },
-  {
-    title: '旗艦版',
-    subtitle: '國際擴張全方位夥伴',
-    highlighted: false,
-    features: [
-      '含專業版全部內容',
-      '頂級全球權威媒體 PR 發稿',
-      'GEO 生成式搜索引擎優化',
-      'AI 品牌影音內容製作',
-      '專案負責人一對一直接對接',
-      '優先體驗維訊新推出情報功能與工具',
-    ],
-  },
-];
+import { tiers } from './data/tiers';
+import { faqs } from './data/faqs';
 
 const mediaLogos = [
   { name: 'AP', zh: '美聯社', file: 'ap.png' },
@@ -255,6 +204,20 @@ function Sidebar({ activeSection }: { activeSection: string }) {
             <span className="font-inter text-sm">{item.label}</span>
           </button>
         ))}
+        <div className="pt-3 mt-3 border-t border-gold/20 space-y-2">
+          <Link
+            to="/pricing"
+            className="block px-4 py-3 rounded-lg font-inter text-sm text-white/70 hover:text-gold hover:bg-white/5 transition-all duration-300"
+          >
+            訂閱方案頁面 →
+          </Link>
+          <Link
+            to="/faq"
+            className="block px-4 py-3 rounded-lg font-inter text-sm text-white/70 hover:text-gold hover:bg-white/5 transition-all duration-300"
+          >
+            完整常見問題 →
+          </Link>
+        </div>
       </div>
       <div className="p-4 border-t border-gold/20">
         <div className="text-white/50 text-xs text-center">© 2025 維訊國際數位</div>
@@ -334,7 +297,7 @@ function Section1() {
         </div>
 
         <p className="font-inter text-white/75 text-lg md:text-xl max-w-2xl mx-auto mb-6 animate-fade-in leading-relaxed" style={{ animationDelay: '1s' }}>
-          維訊核心服務：全球新聞稿發布（涵蓋 AP、路透社等 3,000+ 媒體通訊社）、AI 海外買家與經銷商開發、競爭對手市場情報監控——為企業、政府機關與各類品牌提供國際曝光與市場拓展的代操解決方案
+          維訊核心服務：全球新聞稿發布（涵蓋 AP、路透社等 3,000+ 媒體通訊社）、AI 海外買家與經銷商情報蒐集、競爭對手市場情報監控——為企業、政府機關與各類品牌提供國際曝光與市場拓展的情報訂閱服務
         </p>
         <div className="flex flex-wrap justify-center gap-2 mb-12 animate-fade-in" style={{ animationDelay: '1.1s' }}>
           {['製造外銷', '生技醫療', '政府機關', '品牌活動', '國際會議', '觀光推廣', '科技新創'].map((tag) => (
@@ -351,7 +314,7 @@ function Section1() {
           </div>
           <div className="text-center py-4 sm:py-0">
             <AnimatedCounter end={100} suffix="%" />
-            <div className="font-inter text-white/70 text-sm mt-2">代為執行</div>
+            <div className="font-inter text-white/70 text-sm mt-2">免技術門檻</div>
           </div>
           <div className="text-center py-4 sm:py-0">
             <AnimatedCounter end={4} />
@@ -658,7 +621,7 @@ function Section5() {
               維訊國際數位
             </h3>
             <ul className="space-y-3">
-              {['全程代為執行（Done-For-You）', 'AI 買家意圖識別與追蹤', '媒體 × 商機情報整合', '全球 3,000+ 通訊社矩陣', '零技術/數據人力需求', '每月固定戰情報告'].map((item, i) => (
+              {['情報蒐集與產製全代辦', 'AI 買家意圖識別與追蹤', '媒體 × 商機情報整合', '全球 3,000+ 通訊社矩陣', '零技術/數據人力需求', '每月固定戰情報告'].map((item, i) => (
                 <li key={i} className="flex items-center text-white">
                   <CheckCircle className="w-5 h-5 mr-3 text-gold" />
                   {item}
@@ -670,7 +633,7 @@ function Section5() {
 
         <div className="bg-navy rounded-xl p-8 border border-gold/40">
           <p className="font-inter text-gold text-lg text-center leading-relaxed">
-            維訊全程代為執行，客戶無需企業內部建立技術團隊、無需追趕AI工具汰換浪潮，只需專注本業產品研發，接收並運用維訊持續為您掌握的商機情報，精準掌握市場動脈。
+            維訊團隊全程代為蒐集與產製情報，客戶無需企業內部建立技術團隊、無需追趕AI工具汰換浪潮，只需專注本業產品研發，接收並運用維訊持續為您掌握的商機情報，精準掌握市場動脈；業務決策與最終執行，仍由貴公司團隊主導。
           </p>
         </div>
       </div>
@@ -683,10 +646,10 @@ function Section6() {
     <section id="section-6" className="min-h-screen w-full overflow-x-hidden bg-slate-light py-20 px-6 lg:pl-56">
       <div className="max-w-6xl mx-auto">
         <h2 className="font-playfair text-2xl md:text-3xl text-navy font-bold mb-4 text-center" style={{fontSize: "clamp(1.5rem, 4vw, 2.2rem)"}}>
-          階梯式代操方案規劃
+          階梯式情報訂閱方案規劃
         </h2>
         <p className="font-inter text-text-muted text-center mb-12">
-          依業務規模與目標市場量身規劃，所有方案均由維訊全程代為執行
+          依業務規模與目標市場量身規劃，由維訊團隊產製並定期交付戰情報告
         </p>
 
         <div className="grid md:grid-cols-2 gap-6">
@@ -741,49 +704,6 @@ function Section6() {
 
 function FAQSection() {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
-
-  const faqs = [
-    {
-      q: '維訊的新聞稿發出去之後，會出現在哪些媒體？能保證上 AP、Reuters 嗎？',
-      a: '維訊透過全球 3,000+ 授權通訊社網絡發稿，涵蓋 AP News、Reuters 等頂級國際媒體。原則上可刊登於這些平台，但需符合各通訊社的編輯標準，內容須真實合法、可查證。維訊團隊會在發稿前協助審核內容，確保符合標準，最大化刊登成功率。'
-    },
-    {
-      q: '維訊的服務適合哪些產業或組織？',
-      a: '維訊的全球媒體發稿與 AI 數據服務適用於各類型組織，包括製造與外銷業、生技與醫療業、政府與公部門、科技與新創、品牌與消費品、教育與學術機構。只要有國際曝光需求，維訊均可提供對應的代操服務。'
-    },
-    {
-      q: '維訊的服務需要客戶自己操作嗎？流程是什麼？',
-      a: '維訊全程代為執行，客戶無需具備任何技術能力。流程為：諮詢規劃 → 內容審核 → 全球發稿 → AI 買家意圖追蹤 → 成效報告交付。客戶全程只需提供資訊與確認內容，其餘流程由維訊代為處理。'
-    },
-    {
-      q: '單次發稿和訂閱方案有什麼差別？',
-      a: '單次專案適合有特定活動或新品發布需求的客戶，按次計費，靈活彈性。訂閱方案（季度或年約）適合需要持續國際曝光的客戶，享有優惠費率，並可搭配 AI 數據情報服務，建立長期品牌聲量。'
-    },
-    {
-      q: '企業訪客解密是什麼？怎麼運作？',
-      a: '企業訪客解密是維訊專業版的核心功能。當匿名企業訪客瀏覽客戶網站時，系統會自動識別該訪客所屬企業及所在國家，並記錄其瀏覽行為與停留時間。維訊團隊同時彙整訪客動態，定期整理進戰情報告，將匿名流量轉化為可追蹤的商機。'
-    },
-    {
-      q: '競爭對手監控可以追蹤什麼？',
-      a: '維訊的競爭對手 AI 動態監控可追蹤競爭對手的主要買家變動、市場貨量增減趨勢及供應鏈異動訊號。數據以月報形式定期交付，協助客戶掌握市場動態、即時調整策略。具體監控技術與數據來源屬維訊核心機密，不對外公開。'
-    },
-    {
-      q: 'AI 買手情報名單是怎麼產生的？準確嗎？',
-      a: '維訊透過自有的數據交叉比對機制，鎖定具有真實採購意圖的目標公司，並由團隊進一步確認實際決策者身份，交付聯絡資料。名單完整度因目標市場而異，並持續優化海外市場覆蓋。背後的技術整合方法與作業流程，是維訊多年投入建立的專屬技術架構，所有數據來源皆合法合規取得，確保客戶使用無虞。'
-    },
-    {
-      q: '買手情報覆蓋哪些市場？',
-      a: '維訊的買手情報服務覆蓋全球主要外銷目標市場，包含歐美、亞洲及新興市場。針對不同市場的數據開放程度，維訊採用多元數據補強策略，確保各市場的買手情報完整覆蓋。'
-    },
-    {
-      q: '維訊的成效報告包含哪些內容？',
-      a: '維訊定期交付的成效報告包含：全球媒體刊登清單與連結、各地區媒體覆蓋範圍摘要、以及 AI 買家意圖追蹤重點整理。進階方案以上另含買手情報更新與市場動態摘要；專業版以上再納入全球展會通路夥伴與競爭情報彙整。報告格式固定清晰，方便客戶內部呈報或補助核銷使用。'
-    },
-    {
-      q: '我還需要花錢參加國際展會嗎？',
-      a: '不一定。參展的核心價值──讓買手認識你（曝光）、找到通路夥伴（開發）、掌握同業動態（競爭情報）──維訊都能透過另一種方式協助你達成，而且觸及更廣、成本更低：全球媒體發稿讓你的品牌故事觸及目標市場所有相關受眾，不受限於單一展會的時間地點；同時透過數據情報，遠端鎖定目標市場相關展覽的參與者，梳理出潛在通路夥伴與競爭對手名單。你不必負擔攤位費與差旅成本，就能取得同等甚至更廣泛的商機情報與品牌曝光。'
-    },
-  ];
 
   return (
     <section id="section-faq" className="w-full overflow-x-hidden bg-slate-light py-20 px-6 lg:pl-56">
@@ -936,8 +856,9 @@ function Footer() {
   );
 }
 
-function App() {
+export function HomePage() {
   const [activeSection, setActiveSection] = useState('section-1');
+  const location = useLocation();
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -961,10 +882,24 @@ function App() {
     return () => observer.disconnect();
   }, []);
 
+  // 支援從其他頁面（如 /pricing、/faq）點擊「立即諮詢」後，帶著 #section-contact 錨點導回首頁時，自動捲動到該區塊
+  useEffect(() => {
+    if (location.hash) {
+      const id = location.hash.replace('#', '');
+      const element = document.getElementById(id);
+      if (element) {
+        setTimeout(() => element.scrollIntoView({ behavior: 'smooth' }), 100);
+      }
+    }
+  }, [location]);
+
   return (
     <div className="font-inter bg-navy min-h-screen">
+      <div className="lg:hidden">
+        <TopNav />
+      </div>
       <Sidebar activeSection={activeSection} />
-      <main className="w-full">
+      <main className="w-full pt-14 lg:pt-0">
         <Section1 />
         <SectionDivider />
         <Section2 />
@@ -984,6 +919,18 @@ function App() {
         <Footer />
       </main>
     </div>
+  );
+}
+
+function App() {
+  return (
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/pricing" element={<Pricing />} />
+        <Route path="/faq" element={<FAQ />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 
