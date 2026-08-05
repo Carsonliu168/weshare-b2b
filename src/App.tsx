@@ -641,18 +641,20 @@ function Section5() {
               </tr>
             </thead>
             <tbody>
-              {rows.map((row, i) => (
+              {rows.map((row, i) => {
+                const stripe = i % 2 === 1;
+                return (
                 <tr key={i}>
-                  <td className="p-4 text-white font-inter text-sm font-semibold bg-white/[0.02] border-b border-white/10 whitespace-nowrap">
+                  <td className={`p-4 text-white font-inter text-sm font-semibold border-b border-white/20 whitespace-nowrap ${stripe ? 'bg-white/[0.05]' : 'bg-white/[0.02]'}`}>
                     {row.label}
                   </td>
-                  <td className="p-4 text-white/70 font-inter text-sm border-b border-white/10">
+                  <td className={`p-4 text-white/70 font-inter text-sm border-b border-white/20 ${stripe ? 'bg-white/[0.03]' : ''}`}>
                     <span className="inline-flex items-center">
                       <XCircle className="w-4 h-4 mr-2 text-red-400 flex-shrink-0" />
                       {row.traditional}
                     </span>
                   </td>
-                  <td className="p-4 text-white/70 font-inter text-sm border-b border-white/10">
+                  <td className={`p-4 text-white/70 font-inter text-sm border-b border-white/20 ${stripe ? 'bg-white/[0.03]' : ''}`}>
                     {row.saas ? (
                       <span className="inline-flex items-center">
                         <XCircle className="w-4 h-4 mr-2 text-red-400 flex-shrink-0" />
@@ -662,14 +664,15 @@ function Section5() {
                       <span className="text-white/30">—</span>
                     )}
                   </td>
-                  <td className="p-4 text-white font-inter text-sm font-semibold bg-gold/10 border-b border-white/10">
+                  <td className={`p-4 text-white font-inter text-sm font-semibold border-b border-white/20 ${stripe ? 'bg-gold/[0.14]' : 'bg-gold/10'}`}>
                     <span className="inline-flex items-center">
                       <CheckCircle className="w-4 h-4 mr-2 text-gold flex-shrink-0" />
                       {row.weshare}
                     </span>
                   </td>
                 </tr>
-              ))}
+                );
+              })}
             </tbody>
           </table>
         </div>
