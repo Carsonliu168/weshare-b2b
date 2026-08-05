@@ -130,15 +130,28 @@ function MediaLogoMarquee() {
 }
 
 function AnimatedCounter({ end, suffix = '', duration = 2000 }: { end: number; suffix?: string; duration?: number }) {
-  const [count, setCount] = useState(0);
-  const [isVisible, setIsVisible] = useState(false);
+  const [count, setCount] = useState(end);
+  const [hasAnimated, setHasAnimated] = useState(false);
   const ref = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
-        if (entry.isIntersecting) {
-          setIsVisible(true);
+        if (entry.isIntersecting && !hasAnimated) {
+          setHasAnimated(true);
+          setCount(0);
+          let startTime: number;
+          const animate = (currentTime: number) => {
+            if (!startTime) startTime = currentTime;
+            const progress = Math.min((currentTime - startTime) / duration, 1);
+            setCount(Math.floor(progress * end));
+            if (progress < 1) {
+              requestAnimationFrame(animate);
+            } else {
+              setCount(end);
+            }
+          };
+          requestAnimationFrame(animate);
         }
       },
       { threshold: 0.3 }
@@ -149,23 +162,7 @@ function AnimatedCounter({ end, suffix = '', duration = 2000 }: { end: number; s
     }
 
     return () => observer.disconnect();
-  }, []);
-
-  useEffect(() => {
-    if (!isVisible) return;
-
-    let startTime: number;
-    const animate = (currentTime: number) => {
-      if (!startTime) startTime = currentTime;
-      const progress = Math.min((currentTime - startTime) / duration, 1);
-      setCount(Math.floor(progress * end));
-      if (progress < 1) {
-        requestAnimationFrame(animate);
-      }
-    };
-
-    requestAnimationFrame(animate);
-  }, [isVisible, end, duration]);
+  }, [end, duration, hasAnimated]);
 
   return (
     <div ref={ref} className="counter-animate">
@@ -411,24 +408,30 @@ function Section3() {
           ))}
         </div>
 
-        <div
-          key={activeStage}
-          className="gradient-card rounded-xl p-8 border-l-4 border-gold animate-fade-in"
-        >
-          <div className="flex items-center mb-4">
-            <span className="font-playfair text-gold text-2xl font-bold mr-4">
-              {stages[activeStage].number}
-            </span>
-            <div>
-              <h3 className="font-inter text-white text-lg font-semibold">
-                {stages[activeStage].name}
-              </h3>
-              <p className="font-inter text-gold/70 text-sm">{stages[activeStage].english}</p>
+        <div className="relative">
+          {stages.map((stage, index) => (
+            <div
+              key={stage.number}
+              className={`gradient-card rounded-xl p-8 border-l-4 border-gold ${
+                activeStage === index ? 'block animate-fade-in' : 'hidden'
+              }`}
+            >
+              <div className="flex items-center mb-4">
+                <span className="font-playfair text-gold text-2xl font-bold mr-4">
+                  {stage.number}
+                </span>
+                <div>
+                  <h3 className="font-inter text-white text-lg font-semibold">
+                    {stage.name}
+                  </h3>
+                  <p className="font-inter text-gold/70 text-sm">{stage.english}</p>
+                </div>
+              </div>
+              <p className="font-inter text-white/80 leading-relaxed text-lg">
+                {stage.detail}
+              </p>
             </div>
-          </div>
-          <p className="font-inter text-white/80 leading-relaxed text-lg">
-            {stages[activeStage].detail}
-          </p>
+          ))}
         </div>
       </div>
     </section>
@@ -768,11 +771,17 @@ function FAQSection() {
                 <span className="font-inter font-semibold text-navy pr-4">{faq.q}</span>
                 <span className="text-gold font-bold text-xl flex-shrink-0">{openIndex === i ? '−' : '+'}</span>
               </button>
-              {openIndex === i && (
-                <div className="px-6 py-4 bg-navy/5 border-t border-navy/10">
-                  <p className="font-inter text-text-muted leading-relaxed">{faq.a}</p>
+              <div
+                className={`grid transition-all duration-300 ease-in-out ${
+                  openIndex === i ? 'grid-rows-[1fr] opacity-100' : 'grid-rows-[0fr] opacity-0'
+                }`}
+              >
+                <div className="overflow-hidden">
+                  <div className="px-6 py-4 bg-navy/5 border-t border-navy/10">
+                    <p className="font-inter text-text-muted leading-relaxed">{faq.a}</p>
+                  </div>
                 </div>
-              )}
+              </div>
             </div>
           ))}
         </div>
