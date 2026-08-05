@@ -573,6 +573,45 @@ function Section4() {
 }
 
 function Section5() {
+  const rows = [
+    {
+      label: '買家身份識別',
+      traditional: '無買家身份識別',
+      saas: '數據分散難整合',
+      weshare: 'AI 買家意圖識別與追蹤',
+    },
+    {
+      label: '全球媒體矩陣',
+      traditional: '無全球媒體矩陣',
+      saas: '無媒體發佈資源',
+      weshare: '全球 3,000+ 通訊社矩陣',
+    },
+    {
+      label: '執行方式',
+      traditional: '依賴人工執行，缺乏歸因報告',
+      saas: '需客戶自行操作，學習曲線陡峭',
+      weshare: '情報蒐集與產製全代辦',
+    },
+    {
+      label: '技術/人力需求',
+      traditional: '品牌聲量難以量化轉換',
+      saas: '不知道如何精準觸達海外客群',
+      weshare: '零技術/數據人力需求',
+    },
+    {
+      label: '成效報告',
+      traditional: '無 ABM 自動化',
+      saas: '無託管執行服務',
+      weshare: '每月固定戰情報告',
+    },
+    {
+      label: '國際拓展成本',
+      traditional: '國際展會成本高漲，ROI 下滑',
+      saas: null,
+      weshare: '媒體 × 商機情報整合',
+    },
+  ];
+
   return (
     <section id="section-5" className="min-h-screen w-full overflow-x-hidden geometric-bg relative py-20 px-6 lg:pl-56">
       <Particles />
@@ -584,51 +623,55 @@ function Section5() {
           與傳統做法相比，維訊如何解決品牌國際曝光與商機轉化的痛點
         </p>
 
-        <div className="grid md:grid-cols-3 gap-6 mb-8">
-          <div className="bg-white/5 rounded-xl p-6 border border-white/10">
-            <h3 className="font-inter text-white/50 text-lg font-semibold mb-4">
-              傳統 PR 公關公司
-            </h3>
-            <ul className="space-y-3">
-              {['品牌聲量難以量化轉換', '無買家身份識別', '無 ABM 自動化', '依賴人工執行，缺乏歸因報告', '國際展會成本高漲，ROI 下滑', '無全球媒體矩陣'].map((item, i) => (
-                <li key={i} className="flex items-center text-white/70">
-                  <XCircle className="w-5 h-5 mr-3 text-red-400" />
-                  {item}
-                </li>
+        <div className="overflow-x-auto mb-8 -mx-6 px-6 lg:mx-0 lg:px-0">
+          <table className="w-full min-w-[640px] border-collapse rounded-xl overflow-hidden">
+            <thead>
+              <tr>
+                <th className="text-left p-4 bg-transparent"></th>
+                <th className="text-left p-4 bg-white/5 text-white/50 font-inter text-sm font-semibold border-b-2 border-gold/20">
+                  傳統 PR 公關公司
+                </th>
+                <th className="text-left p-4 bg-white/5 text-white/50 font-inter text-sm font-semibold border-b-2 border-gold/20">
+                  SaaS 軟體經銷商
+                </th>
+                <th className="text-left p-4 bg-gradient-to-br from-gold to-yellow-200 text-navy font-inter text-sm font-semibold border-b-2 border-gold/20">
+                  維訊國際數位
+                  <span className="block text-[11px] font-normal mt-1">最佳選擇</span>
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              {rows.map((row, i) => (
+                <tr key={i}>
+                  <td className="p-4 text-white font-inter text-sm font-semibold bg-white/[0.02] border-b border-white/10 whitespace-nowrap">
+                    {row.label}
+                  </td>
+                  <td className="p-4 text-white/70 font-inter text-sm border-b border-white/10">
+                    <span className="inline-flex items-center">
+                      <XCircle className="w-4 h-4 mr-2 text-red-400 flex-shrink-0" />
+                      {row.traditional}
+                    </span>
+                  </td>
+                  <td className="p-4 text-white/70 font-inter text-sm border-b border-white/10">
+                    {row.saas ? (
+                      <span className="inline-flex items-center">
+                        <XCircle className="w-4 h-4 mr-2 text-red-400 flex-shrink-0" />
+                        {row.saas}
+                      </span>
+                    ) : (
+                      <span className="text-white/30">—</span>
+                    )}
+                  </td>
+                  <td className="p-4 text-white font-inter text-sm font-semibold bg-gold/10 border-b border-white/10">
+                    <span className="inline-flex items-center">
+                      <CheckCircle className="w-4 h-4 mr-2 text-gold flex-shrink-0" />
+                      {row.weshare}
+                    </span>
+                  </td>
+                </tr>
               ))}
-            </ul>
-          </div>
-
-          <div className="bg-white/5 rounded-xl p-6 border border-white/10">
-            <h3 className="font-inter text-white/50 text-lg font-semibold mb-4">
-              SaaS 軟體經銷商
-            </h3>
-            <ul className="space-y-3">
-              {['需客戶自行操作', '學習曲線陡峭', '無託管執行服務', '不知道如何精準觸達海外客群', '數據分散難整合', '無媒體發佈資源'].map((item, i) => (
-                <li key={i} className="flex items-center text-white/70">
-                  <XCircle className="w-5 h-5 mr-3 text-red-400" />
-                  {item}
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          <div className="gradient-card rounded-xl p-6 border-2 border-gold relative gold-box-glow">
-            <div className="absolute top-4 right-4 bg-gold text-navy text-xs font-semibold px-3 py-1 rounded-full">
-              最佳選擇
-            </div>
-            <h3 className="font-inter text-gold text-lg font-semibold mb-4">
-              維訊國際數位
-            </h3>
-            <ul className="space-y-3">
-              {['情報蒐集與產製全代辦', 'AI 買家意圖識別與追蹤', '媒體 × 商機情報整合', '全球 3,000+ 通訊社矩陣', '零技術/數據人力需求', '每月固定戰情報告'].map((item, i) => (
-                <li key={i} className="flex items-center text-white">
-                  <CheckCircle className="w-5 h-5 mr-3 text-gold" />
-                  {item}
-                </li>
-              ))}
-            </ul>
-          </div>
+            </tbody>
+          </table>
         </div>
 
         <div className="bg-navy rounded-xl p-8 border border-gold/40">
