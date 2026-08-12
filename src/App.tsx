@@ -443,133 +443,24 @@ function Section4() {
     <section id="section-4" className="min-h-screen w-full overflow-x-hidden bg-slate-light py-20 px-6 lg:pl-56">
       <div className="max-w-6xl mx-auto">
         <h2 className="font-playfair text-navy font-bold mb-4 text-center" style={{fontSize: "clamp(1.5rem, 4vw, 2.2rem)"}}>
-          維訊全球商務戰情月報 Live Demo
+          維訊全球商務戰情報告 示意
         </h2>
-        <p className="font-inter text-text-muted text-center mb-12">
-          以下為維訊內部監控台示意（客戶實際收到的是定期彙整的戰情報告）
+        <p className="font-inter text-text-muted text-center mb-4">
+          以下為戰情報告版面示意，實際交付格式與內容依訂閱方案而定
+        </p>
+        <p className="font-inter text-text-muted/70 text-center text-xs mb-12">
+          * 客戶資料依保密協議處理，圖表為示意數據
         </p>
 
-        <div className="grid md:grid-cols-2 gap-6 mb-6">
-          <div className="gradient-card rounded-xl border-t-2 border-gold p-6">
-            <h3 className="font-inter text-gold text-lg font-semibold mb-4 flex items-center">
-              <BarChart3 className="w-5 h-5 mr-2" />
-              全球海關提單月度監控分析
-            </h3>
-            <div className="overflow-x-auto">
-              <table className="w-full text-sm">
-                <thead>
-                  <tr className="text-white/50 border-b border-white/10">
-                    <th className="text-left py-2 font-normal">競爭對手代號</th>
-                    <th className="text-left py-2 font-normal">主要買家區域</th>
-                    <th className="text-left py-2 font-normal">本月貨量</th>
-                    <th className="text-right py-2 font-normal">月比變化</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {competitorData.map((row, i) => (
-                    <tr key={i} className="border-b border-white/5">
-                      <td className="py-3 text-white">{row.competitor}</td>
-                      <td className="py-3 text-white/70">{row.region}</td>
-                      <td className="py-3 text-white">{row.volume}</td>
-                      <td className="py-3 text-right">
-                        <span
-                          className={`flex items-center justify-end ${
-                            row.change > 0 ? 'text-green-400' : 'text-red-400'
-                          }`}
-                        >
-                          {row.change > 0 ? (
-                            <ArrowUpRight className="w-4 h-4 mr-1" />
-                          ) : (
-                            <ArrowDownRight className="w-4 h-4 mr-1" />
-                          )}
-                          {row.change > 0 ? '+' : ''}{row.change}%
-                        </span>
-                      </td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
-            </div>
-          </div>
-
-          <div className="gradient-card rounded-xl border-t-2 border-gold p-6">
-            <h3 className="font-inter text-gold text-lg font-semibold mb-4 flex items-center">
-              <TrendingDown className="w-5 h-5 mr-2" />
-              ABI 流量與媒體來源分析圖表
-            </h3>
-            <div className="h-48">
-              <ResponsiveContainer width="100%" height="100%">
-                <LineChart data={abmData} margin={{ top: 10, right: 10, left: -20, bottom: 0 }}>
-                  <XAxis
-                    dataKey="month"
-                    stroke="#ffffff50"
-                    tick={{ fill: '#ffffff80', fontSize: 12 }}
-                    axisLine={{ stroke: '#ffffff20' }}
-                  />
-                  <YAxis
-                    stroke="#ffffff50"
-                    tick={{ fill: '#ffffff80', fontSize: 12 }}
-                    axisLine={{ stroke: '#ffffff20' }}
-                    tickFormatter={(v) => `${v}%`}
-                  />
-                  <defs>
-                    <linearGradient id="goldGradient" x1="0" y1="0" x2="0" y2="1">
-                      <stop offset="0%" stopColor="#F3C623" stopOpacity={0.3} />
-                      <stop offset="100%" stopColor="#F3C623" stopOpacity={0} />
-                    </linearGradient>
-                  </defs>
-                  <Area
-                    type="monotone"
-                    dataKey="value"
-                    stroke="none"
-                    fill="url(#goldGradient)"
-                  />
-                  <Line
-                    type="monotone"
-                    dataKey="value"
-                    stroke="#F3C623"
-                    strokeWidth={3}
-                    dot={{ fill: '#F3C623', strokeWidth: 2, r: 4 }}
-                    activeDot={{ fill: '#F3C623', r: 6, strokeWidth: 0 }}
-                  />
-                </LineChart>
-              </ResponsiveContainer>
-            </div>
-            <p className="font-inter text-white/50 text-xs text-center mt-2">
-              Y軸：ABI 觸達識別率 %
-            </p>
-            <p className="font-inter text-gold/70 text-xs text-center mt-1">
-              隨訂閱期間持續累積，趨勢洞察將越發完整——這正是長期合作的核心價值
-            </p>
-          </div>
-        </div>
-
-        <div className="gradient-card rounded-xl border-t-2 border-gold p-6">
-          <h3 className="font-inter text-gold text-lg font-semibold mb-4 flex items-center">
-            <Eye className="w-5 h-5 mr-2" />
-            匿名企業訪客意圖解密
-          </h3>
-          <div className="space-y-3">
-            {visitors.map((visitor, i) => (
-              <div key={i} className="flex items-center justify-between py-3 border-b border-white/10 last:border-0">
-                <div className="flex items-center">
-                  <span className="w-2 h-2 bg-gold rounded-full mr-4" />
-                  <span className="text-white mr-3">{visitor.country}</span>
-                  <span className="text-white font-semibold">{visitor.company}</span>
-                </div>
-                <div className="flex items-center gap-4">
-                  <span className="text-white/70 text-sm">造訪「{visitor.page}」</span>
-                  <span className="text-white/50 text-sm">停留 {visitor.time}</span>
-                  {visitor.triggered && (
-                    <span className="blink-badge bg-red-500/20 text-red-400 text-xs px-3 py-1 rounded-full font-semibold whitespace-nowrap">
-                      🔴 已標記為高優先商機
-                    </span>
-                  )}
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
+        <picture>
+          <source media="(min-width: 768px)" srcSet="/report-demo-desktop.png" />
+          <img
+            src="/report-demo-mobile.png"
+            alt="維訊全球商務戰情報告示意：全球海關提單定期監控分析、企業訪客識別趨勢、匿名企業訪客意圖解密"
+            className="w-full rounded-xl border border-gold/20"
+            loading="lazy"
+          />
+        </picture>
       </div>
     </section>
   );
