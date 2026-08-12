@@ -360,16 +360,20 @@ function Section2() {
             <div className="rounded-xl overflow-hidden border-2 border-navy/20 shadow-lg">
               <div className="bg-navy px-4 py-2 flex items-center gap-2">
                 <span className="font-inter text-white font-bold text-sm">AP</span>
-                <span className="font-inter text-white/70 text-xs">Associated Press · AP News</span>
+                <span className="font-inter text-white/90 text-xs">Associated Press · AP News</span>
               </div>
-              <img src="/press-ap.jpg" alt="AP News 刊登截圖" className="w-full object-cover" />
+              <div className="h-64 md:h-72 overflow-hidden">
+                <img src="/press-ap.jpg" alt="AP News 刊登截圖" className="w-full h-full object-cover object-top" />
+              </div>
             </div>
             <div className="rounded-xl overflow-hidden border-2 border-navy/20 shadow-lg">
               <div className="bg-[#FF8000] px-4 py-2 flex items-center gap-2">
                 <span className="font-inter text-white font-bold text-sm">Reuters</span>
-                <span className="font-inter text-white/70 text-xs">路透社 · 全球最大通訊社</span>
+                <span className="font-inter text-white/90 text-xs">路透社 · 全球最大通訊社</span>
               </div>
-              <img src="/press-reuters.jpg" alt="Reuters 刊登截圖" className="w-full object-cover" />
+              <div className="h-64 md:h-72 overflow-hidden">
+                <img src="/press-reuters.jpg" alt="Reuters 刊登截圖" className="w-full h-full object-cover object-top" />
+              </div>
             </div>
           </div>
           <p className="font-inter text-text-muted text-center text-xs mt-4">* 客戶資料依保密協議處理，媒體刊登內容均為真實案例</p>
