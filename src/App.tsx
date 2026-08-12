@@ -443,7 +443,7 @@ function Section4() {
     <section id="section-4" className="min-h-screen w-full overflow-x-hidden bg-slate-light py-20 px-6 lg:pl-56">
       <div className="max-w-6xl mx-auto">
         <h2 className="font-playfair text-navy font-bold mb-4 text-center" style={{fontSize: "clamp(1.5rem, 4vw, 2.2rem)"}}>
-          維訊全球商務戰情報告 示意
+          維訊全球商務戰情報告
         </h2>
         <p className="font-inter text-text-muted text-center mb-4">
           以下為戰情報告版面示意，實際交付格式與內容依訂閱方案而定
