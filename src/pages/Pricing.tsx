@@ -18,7 +18,7 @@ export default function Pricing() {
           <p className="font-inter text-white/70 leading-relaxed">
             從單一市場試水溫，到多國同步開發——四種方案，對應不同階段的海外業務需求。
             每位客戶的目標市場、產業與資源投入不同，我們先了解您的預算與需求，
-            再配置對應方案，避免您為用不到的功能付費。
+            再建議最適合的方案。
           </p>
         </div>
 
@@ -66,11 +66,10 @@ export default function Pricing() {
         </div>
 
         <div className="max-w-3xl mx-auto bg-white/5 border border-gold/20 rounded-xl p-8 mb-16">
-          <h2 className="font-playfair text-gold text-xl font-bold mb-3">不賣您用不到的功能</h2>
+          <h2 className="font-playfair text-gold text-xl font-bold mb-3">從最適合您的起點開始</h2>
           <p className="font-inter text-white/70 text-sm leading-relaxed">
-            市面上許多方案採一口價套餐，包含大量您可能永遠用不到的功能。我們的做法相反
-            ——先了解您的目標市場、業務階段與預算範圍，再從四個方案中配置最合適的組合。
-            這代表您付的每一分錢，都對應到實際會用上的情報服務。
+            四個方案由低至高逐級包含：每一級涵蓋前一級的全部內容，再加上更進階的情報服務。
+            我們會先了解您的目標市場、業務階段與預算範圍，再建議最適合的起點。
           </p>
         </div>
 

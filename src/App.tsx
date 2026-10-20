@@ -4,36 +4,10 @@ import TopNav from './components/TopNav';
 import Pricing from './pages/Pricing';
 import FAQ from './pages/FAQ';
 import {
-  TrendingDown,
-  Search,
-  DollarSign,
-  User,
-  Building2,
-  Settings,
   XCircle,
   CheckCircle,
-  Eye,
-  Target,
-  Zap,
-  Globe,
-  BarChart3,
-  Users,
-  Shield,
-  Brain,
-  Award,
   ArrowUpRight,
-  ArrowDownRight,
 } from 'lucide-react';
-import { LineChart, Line, XAxis, YAxis, ResponsiveContainer, Area } from 'recharts';
-
-const abmData = [
-  { month: 'Jan', value: 1.2 },
-  { month: 'Feb', value: 1.8 },
-  { month: 'Mar', value: 2.4 },
-  { month: 'Apr', value: 3.1 },
-  { month: 'May', value: 3.5 },
-  { month: 'Jun', value: 3.8 },
-];
 
 const navItems = [
   { id: 'section-1', label: '執行總覽' },
@@ -75,19 +49,6 @@ const stages = [
     detail:
       '追蹤造訪客戶網站的企業 IP 特徵，對點擊 PR 連結的匿名買家進行企業域名反向追蹤，定期彙整進戰情報告通知業務團隊，持續掌握潛在商機。',
   },
-];
-
-const competitorData = [
-  { competitor: 'Competitor Alpha', region: 'EU-7 採購集團', volume: '1,240 CBM', change: -12 },
-  { competitor: 'Competitor Beta', region: '北美供應鏈中心', volume: '980 CBM', change: 8 },
-  { competitor: 'Competitor Gamma', region: '東南亞經銷商', volume: '670 CBM', change: -5 },
-];
-
-const visitors = [
-  { country: '🇩🇪', company: 'Würth Group（德國）', page: '產品認證規格頁', time: '4 分 32 秒', triggered: false },
-  { country: '🇺🇸', company: 'Home Depot HQ（美國）', page: 'OEM 代工規格頁', time: '3 分 08 秒', triggered: false },
-  { country: '🇯🇵', company: 'Misumi Corporation（日本）', page: '合作夥伴頁', time: '2 分 17 秒', triggered: false },
-  { country: '🇬🇧', company: 'Travis Perkins（英國）', page: '詢價聯絡頁', time: '6 分 54 秒', triggered: true },
 ];
 
 import { tiers } from './data/tiers';
@@ -358,7 +319,7 @@ function Section2() {
         {/* 媒體刊登實績 */}
         <div className="mt-12 mb-16">
           <h3 className="font-playfair text-2xl text-navy font-bold text-center mb-2">媒體刊登實績</h3>
-          <p className="font-inter text-text-muted text-center text-sm mb-8">以下為維訊實際協助客戶登上國際權威媒體之真實案例</p>
+          <p className="font-inter text-text-muted text-center text-sm mb-8">以下為維訊透過通訊社網絡發佈之新聞稿，於 AP News、Reuters 新聞稿專區刊登的實例</p>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div className="rounded-xl overflow-hidden border-2 border-navy/20 shadow-lg">
               <div className="bg-navy px-4 py-2 flex items-center gap-2">
@@ -379,7 +340,6 @@ function Section2() {
               </div>
             </div>
           </div>
-          <p className="font-inter text-text-muted text-center text-xs mt-4">* 客戶資料依保密協議處理，媒體刊登內容均為真實案例</p>
         </div>
       </div>
     </section>
@@ -537,7 +497,6 @@ function Section5() {
                 </th>
                 <th className="text-left p-4 bg-gradient-to-br from-gold to-yellow-200 text-navy font-inter text-sm font-semibold border-b-2 border-gold/20">
                   維訊國際數位
-                  <span className="block text-[11px] font-normal mt-1">最佳選擇</span>
                 </th>
               </tr>
             </thead>
@@ -691,26 +650,38 @@ function FAQSection() {
 function ContactSection() {
   const [formData, setFormData] = useState({ name: '', company: '', service: '', contact: '' });
   const [submitted, setSubmitted] = useState(false);
+  const [sending, setSending] = useState(false);
+  const [error, setError] = useState('');
 
   const handleSubmit = async () => {
-    if (formData.name && formData.company && formData.contact) {
-      try {
-        const response = await fetch('https://formspree.io/f/mojgvbdw', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({
-            姓名: formData.name,
-            公司名稱: formData.company,
-            服務需求: formData.service,
-            聯絡方式: formData.contact,
-          }),
-        });
-        if (response.ok) {
-          setSubmitted(true);
-        }
-      } catch (error) {
-        console.error('Form submission error:', error);
+    if (sending) return;
+    if (!formData.name.trim() || !formData.company.trim() || !formData.contact.trim()) {
+      setError('請填寫姓名、公司名稱與聯絡方式（標示 * 的欄位）。');
+      return;
+    }
+    setError('');
+    setSending(true);
+    try {
+      const response = await fetch('https://formspree.io/f/mojgvbdw', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          姓名: formData.name,
+          公司名稱: formData.company,
+          服務需求: formData.service,
+          聯絡方式: formData.contact,
+        }),
+      });
+      if (response.ok) {
+        setSubmitted(true);
+      } else {
+        setError('送出失敗，請稍後再試，或直接寄信至 weshareai168@gmail.com。');
       }
+    } catch (err) {
+      console.error('Form submission error:', err);
+      setError('網路連線異常，送出失敗。請稍後再試，或直接寄信至 weshareai168@gmail.com。');
+    } finally {
+      setSending(false);
     }
   };
 
@@ -776,11 +747,17 @@ function ContactSection() {
                 className="w-full px-4 py-3 rounded-lg border-2 border-navy/20 font-inter text-navy focus:outline-none focus:border-gold transition-colors"
               />
             </div>
+            {error && (
+              <p role="alert" className="font-inter text-sm text-red-600 text-center">
+                {error}
+              </p>
+            )}
             <button
               onClick={handleSubmit}
-              className="w-full py-4 bg-navy text-white font-inter font-semibold rounded-lg hover:bg-gold hover:text-navy transition-all duration-300 text-lg"
+              disabled={sending}
+              className="w-full py-4 bg-navy text-white font-inter font-semibold rounded-lg hover:bg-gold hover:text-navy transition-all duration-300 text-lg disabled:opacity-60 disabled:cursor-not-allowed"
             >
-              立即諮詢
+              {sending ? '送出中…' : '立即諮詢'}
             </button>
             <p className="font-inter text-text-muted text-xs text-center">
               或直接寄信至：<a href="mailto:weshareai168@gmail.com" className="text-gold underline">weshareai168@gmail.com</a>

@@ -23,6 +23,8 @@ export default function FAQ() {
               <div key={i} className="border border-white/15 rounded-xl overflow-hidden">
                 <button
                   onClick={() => setOpenIndex(openIndex === i ? null : i)}
+                  aria-expanded={openIndex === i}
+                  aria-controls={`faq-answer-${i}`}
                   className="w-full px-6 py-4 text-left flex items-center justify-between bg-white/5 hover:bg-white/10 transition-colors"
                 >
                   <span className="font-inter font-semibold text-white pr-4">{faq.q}</span>
@@ -30,11 +32,18 @@ export default function FAQ() {
                     {openIndex === i ? '−' : '+'}
                   </span>
                 </button>
-                {openIndex === i && (
-                  <div className="px-6 py-4 bg-white/[0.03] border-t border-white/10">
-                    <p className="font-inter text-white/70 leading-relaxed text-sm">{faq.a}</p>
+                <div
+                  id={`faq-answer-${i}`}
+                  className={`grid transition-all duration-300 ease-in-out ${
+                    openIndex === i ? 'grid-rows-[1fr] opacity-100' : 'grid-rows-[0fr] opacity-0'
+                  }`}
+                >
+                  <div className="overflow-hidden">
+                    <div className="px-6 py-4 bg-white/[0.03] border-t border-white/10">
+                      <p className="font-inter text-white/70 leading-relaxed text-sm">{faq.a}</p>
+                    </div>
                   </div>
-                )}
+                </div>
               </div>
             ))}
           </div>

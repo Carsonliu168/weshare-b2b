@@ -23,6 +23,7 @@ const routes = [
     outFile: 'dist/index.html',
     title: '國際新聞稿發佈｜AP、Reuters 發稿與海外買家情報｜維訊國際數位',
     description: '全球 3,000+ 通訊社媒體發稿，結合 AI 數據智能，為企業、品牌與政府機關提供國際媒體曝光與 B2B 買家情報訂閱服務。',
+    ogDescription: '全球媒體聲量 × AI 數據智能 = 可量化的商機與影響力', // 首頁社群分享沿用原標語
   },
   {
     path: '/pricing',
@@ -60,17 +61,32 @@ async function main() {
       )
     );
 
+    // 用函式當替換值，避免內容裡的 $ 符號被 String.replace 當成特殊語法
     let html = templateHtml
-      .replace('<div id="root"></div>', `<div id="root">${appHtml}</div>`)
-      .replace(/<title>.*?<\/title>/, `<title>${route.title}</title>`)
+      .replace('<div id="root"></div>', () => `<div id="root">${appHtml}</div>`)
+      .replace(/<title>.*?<\/title>/, () => `<title>${route.title}</title>`)
       .replace(
         /<meta name="description" content=".*?" \/>/,
-        `<meta name="description" content="${route.description}" />`
+        () => `<meta name="description" content="${route.description}" />`
       )
       .replace(
         /<link rel="canonical" href=".*?" \/>/,
-        `<link rel="canonical" href="${route.url}" />`
+        () => `<link rel="canonical" href="${route.url}" />`
       );
+
+    // 社群分享標籤（LINE / Facebook / X）：每頁各自對應，不再一律顯示首頁資訊
+    const esc = (v) => v.replace(/&/g, '&amp;').replace(/"/g, '&quot;');
+    const setMeta = (src, attr, key, value) =>
+      src.replace(
+        new RegExp(`<meta ${attr}="${key}" content=".*?" \\/>`),
+        () => `<meta ${attr}="${key}" content="${esc(value)}" />`
+      );
+    const shareDesc = route.ogDescription ?? route.description;
+    html = setMeta(html, 'property', 'og:title', route.title);
+    html = setMeta(html, 'property', 'og:description', shareDesc);
+    html = setMeta(html, 'property', 'og:url', route.url);
+    html = setMeta(html, 'name', 'twitter:title', route.title);
+    html = setMeta(html, 'name', 'twitter:description', shareDesc);
 
     // FAQPage 結構化資料：直接取自 src/data/faqs.ts，與頁面上顯示的問答永遠一致
     if (route.faqSchema) {
