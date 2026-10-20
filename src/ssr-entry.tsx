@@ -5,3 +5,4 @@
 export { HomePage } from './App';
 export { default as Pricing } from './pages/Pricing';
 export { default as FAQ } from './pages/FAQ';
+export { faqs } from './data/faqs';

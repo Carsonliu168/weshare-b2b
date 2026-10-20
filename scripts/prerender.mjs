@@ -39,11 +39,12 @@ const routes = [
     outFile: 'dist/faq/index.html',
     title: '國際新聞稿與海外買家情報常見問題｜維訊國際數位',
     description: '關於維訊全球媒體發稿、AI 買家情報服務、戰情報告交付流程的常見問題整理。',
+    faqSchema: true, // 同一組問答只標記一處（Google 規範），首頁不重複標記
   },
 ];
 
 async function main() {
-  const { HomePage, Pricing, FAQ } = await import(resolve(root, 'dist-ssr/ssr-entry.js'));
+  const { HomePage, Pricing, FAQ, faqs } = await import(resolve(root, 'dist-ssr/ssr-entry.js'));
   const components = { HomePage, Pricing, FAQ };
 
   const indexPath = resolve(root, 'dist/index.html');
@@ -70,6 +71,23 @@ async function main() {
         /<link rel="canonical" href=".*?" \/>/,
         `<link rel="canonical" href="${route.url}" />`
       );
+
+    // FAQPage 結構化資料：直接取自 src/data/faqs.ts，與頁面上顯示的問答永遠一致
+    if (route.faqSchema) {
+      const faqJson = JSON.stringify({
+        '@context': 'https://schema.org',
+        '@type': 'FAQPage',
+        mainEntity: faqs.map((f) => ({
+          '@type': 'Question',
+          name: f.q,
+          acceptedAnswer: { '@type': 'Answer', text: f.a },
+        })),
+      }).replace(/</g, '\\u003c');
+      html = html.replace(
+        '</head>',
+        `<script type="application/ld+json">${faqJson}</script>\n  </head>`
+      );
+    }
 
     const outPath = resolve(root, route.outFile);
     mkdirSync(dirname(outPath), { recursive: true });
