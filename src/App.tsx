@@ -297,7 +297,7 @@ function Section1() {
         </div>
 
         <p className="font-inter text-white/75 text-lg md:text-xl max-w-2xl mx-auto mb-6 animate-fade-in leading-relaxed" style={{ animationDelay: '1s' }}>
-          維訊核心服務：全球新聞稿發布（涵蓋 AP、路透社等 3,000+ 媒體通訊社）、AI 海外買家與經銷商情報蒐集、競爭對手市場情報監控——為企業、政府機關與各類品牌提供國際曝光與市場拓展的情報訂閱服務
+          維訊核心服務：全球新聞稿發佈（涵蓋 AP、路透社等 3,000+ 媒體通訊社）、AI 海外買家與經銷商情報蒐集、競爭對手市場情報監控——為企業、政府機關與各類品牌提供國際曝光與市場拓展的情報訂閱服務
         </p>
         <div className="flex flex-wrap justify-center gap-2 mb-12 animate-fade-in" style={{ animationDelay: '1.1s' }}>
           {['製造外銷', '生技醫療', '政府機關', '品牌活動', '國際會議', '觀光推廣', '科技新創'].map((tag) => (
@@ -349,7 +349,7 @@ function Section2() {
 
         <div className="bg-navy rounded-xl p-8 border-l-4 border-gold mb-12">
           <p className="font-inter text-gold text-lg leading-relaxed">
-            維訊透過全球 3,000+ 精選通訊社網絡發稿，為企業、品牌與政府機關解決國際曝光難題，其中涵蓋 Yahoo 財經、美聯社、路透社等月活躍用戶上億的頂級媒體平台。每篇稿件發布期間同步被 Google 等搜尋引擎收錄索引，強化曝光期間的國際能見度與搜尋觸及。
+            維訊透過全球 3,000+ 精選通訊社網絡發稿，為企業、品牌與政府機關解決國際曝光難題，其中涵蓋 Yahoo 財經、美聯社、路透社等月活躍用戶上億的頂級媒體平台。每篇稿件發佈期間同步被 Google 等搜尋引擎收錄索引，強化曝光期間的國際能見度與搜尋觸及。
           </p>
         </div>
 
