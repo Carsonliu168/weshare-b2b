@@ -21,7 +21,7 @@ const routes = [
     url: 'https://www.weshareai.tw/',
     componentKey: 'HomePage',
     outFile: 'dist/index.html',
-    title: '維訊國際數位 | Weshare International Digital',
+    title: '國際新聞稿發佈｜AP、Reuters 發稿與海外買家情報｜維訊國際數位',
     description: '全球 3,000+ 通訊社媒體發稿，結合 AI 數據智能，為企業、品牌與政府機關提供國際媒體曝光與 B2B 買家情報訂閱服務。',
   },
   {
@@ -29,7 +29,7 @@ const routes = [
     url: 'https://www.weshareai.tw/pricing',
     componentKey: 'Pricing',
     outFile: 'dist/pricing/index.html',
-    title: '訂閱方案 | 維訊國際數位',
+    title: '國際新聞稿發佈訂閱方案｜維訊國際數位',
     description: '四種買家情報訂閱方案，依業務規模與目標市場量身規劃。基礎版、進階版、專業版、旗艦版，先了解需求再配置合適方案。',
   },
   {
@@ -37,7 +37,7 @@ const routes = [
     url: 'https://www.weshareai.tw/faq',
     componentKey: 'FAQ',
     outFile: 'dist/faq/index.html',
-    title: '常見問題 | 維訊國際數位',
+    title: '國際新聞稿與海外買家情報常見問題｜維訊國際數位',
     description: '關於維訊全球媒體發稿、AI 買家情報服務、戰情報告交付流程的常見問題整理。',
   },
 ];

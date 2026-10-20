@@ -217,7 +217,7 @@ function Sidebar({ activeSection }: { activeSection: string }) {
         </div>
       </div>
       <div className="p-4 border-t border-gold/20">
-        <div className="text-white/50 text-xs text-center">© 2025 維訊國際數位</div>
+        <div className="text-white/50 text-xs text-center">© 2026 維訊國際數位</div>
       </div>
     </nav>
   );
@@ -279,6 +279,9 @@ function Section1() {
             style={{ fontSize: 'clamp(1.8rem, 5vw, 3rem)' }}
           >
             維訊國際數位
+            <span className="block font-inter font-normal text-white/80 text-sm md:text-base mt-1 tracking-wide">
+              國際新聞稿發佈與海外買家情報
+            </span>
           </h1>
         </div>
 
@@ -475,7 +478,7 @@ function Section5() {
     {
       label: '買家身份識別',
       traditional: '無買家身份識別',
-      saas: '數據分散難整合',
+      saas: '不知道如何精準觸達海外客群',
       weshare: 'AI 買家意圖識別與追蹤',
     },
     {
@@ -486,20 +489,20 @@ function Section5() {
     },
     {
       label: '執行方式',
-      traditional: '依賴人工執行，缺乏歸因報告',
-      saas: '需客戶自行操作，學習曲線陡峭',
+      traditional: '依賴人工執行',
+      saas: '無託管執行服務',
       weshare: '情報蒐集與產製全代辦',
     },
     {
       label: '技術/人力需求',
-      traditional: '品牌聲量難以量化轉換',
-      saas: '不知道如何精準觸達海外客群',
+      traditional: '無目標客戶自動追蹤',
+      saas: '需客戶自行操作，學習曲線陡峭',
       weshare: '零技術/數據人力需求',
     },
     {
       label: '成效報告',
-      traditional: '無 ABM 自動化',
-      saas: '無託管執行服務',
+      traditional: '品牌聲量難以量化轉換，缺乏歸因報告',
+      saas: '數據分散難整合',
       weshare: '每月固定戰情報告',
     },
     {
@@ -794,7 +797,7 @@ function Footer() {
     <footer className="w-full overflow-x-hidden geometric-bg relative py-12 px-6 lg:pl-56">
       <Particles />
       <div className="max-w-6xl mx-auto relative z-10 text-center">
-        <p className="font-inter text-white text-lg mb-2">© 2025 維訊國際數位有限公司</p>
+        <p className="font-inter text-white text-lg mb-2">© 2026 維訊國際數位有限公司</p>
         <p className="font-inter text-gold text-sm mb-4">
           版權所有 · All Rights Reserved
         </p>
