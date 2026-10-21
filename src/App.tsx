@@ -223,18 +223,18 @@ function Section1() {
   return (
     <section
       id="section-1"
-      className="min-h-screen w-full overflow-x-hidden geometric-bg relative flex flex-col items-center justify-center py-20 px-6"
+      className="min-h-screen w-full overflow-x-hidden geometric-bg relative flex flex-col items-center justify-center py-20 px-6 lg:pl-56"
     >
       <Particles />
       <div className="hero-glow relative z-10 max-w-4xl mx-auto text-center">
         {/* 品牌鎖定組合：logo 在左，右側三行（英文名／中文名／副標）寬度對齊；中文名為 6 個字 = 6em */}
         <div
           className="flex items-center justify-center gap-3 md:gap-6 mb-8 animate-fade-in"
-          style={{ fontSize: 'clamp(2rem, 10vw, 4rem)', animationDelay: '0.3s' }}
+          style={{ fontSize: 'clamp(1.8rem, calc((100vw - 60px) / 9.2), 4rem)', animationDelay: '0.3s' }}
         >
           {/* 沿用原本的 /logo.png；原檔四周有透明留白，這裡用 CSS 裁掉留白，讓圖案大小與右側三行文字對得上 */}
           <div
-            className="relative shrink-0 overflow-hidden h-[1.8em] md:h-[2.2em]"
+            className="relative shrink-0 overflow-hidden h-[2.4em]"
             style={{ aspectRatio: '292 / 249' }}
           >
             <img
@@ -249,7 +249,7 @@ function Section1() {
               className="font-inter font-bold text-gold uppercase whitespace-nowrap"
               style={{
                 fontSize: '0.312em',
-                letterSpacing: '0.04em',
+                letterSpacing: '0.03em',
                 textAlign: 'justify',
                 textAlignLast: 'justify',
                 marginBottom: '0.15em',
