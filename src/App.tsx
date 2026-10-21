@@ -227,23 +227,53 @@ function Section1() {
     >
       <Particles />
       <div className="hero-glow relative z-10 max-w-4xl mx-auto text-center">
-        <div className="mb-6 animate-fade-in" style={{ animationDelay: '0.2s' }}>
-          <span className="font-inter text-gold text-xs tracking-[0.3em] uppercase">
-            WESHARE INTERNATIONAL DIGITAL
-          </span>
-        </div>
-
-        <div className="flex items-center justify-center gap-2 mb-4 animate-fade-in" style={{ animationDelay: '0.4s' }}>
-          <img src="/logo.png" alt="Weshare Logo" className="w-14 h-14 md:w-20 md:h-20 object-contain" />
-          <h1
-            className="font-playfair text-white font-bold break-keep"
-            style={{ fontSize: 'clamp(1.8rem, 5vw, 3rem)' }}
+        {/* 品牌鎖定組合：logo 在左，右側三行（英文名／中文名／副標）寬度對齊；中文名為 6 個字 = 6em */}
+        <div
+          className="flex items-center justify-center gap-3 md:gap-6 mb-8 animate-fade-in"
+          style={{ fontSize: 'clamp(2rem, 10vw, 4rem)', animationDelay: '0.3s' }}
+        >
+          {/* 沿用原本的 /logo.png；原檔四周有透明留白，這裡用 CSS 裁掉留白，讓圖案大小與右側三行文字對得上 */}
+          <div
+            className="relative shrink-0 overflow-hidden h-[1.8em] md:h-[2.2em]"
+            style={{ aspectRatio: '292 / 249' }}
           >
-            維訊國際數位
-            <span className="block font-inter font-normal text-white/80 text-sm md:text-base mt-1 tracking-wide">
-              國際新聞稿發佈與海外買家情報
-            </span>
-          </h1>
+            <img
+              src="/logo.png"
+              alt="Weshare Logo"
+              className="absolute max-w-none"
+              style={{ width: '171.2%', height: '200.8%', left: '-35.96%', top: '-49.4%' }}
+            />
+          </div>
+          <div className="text-left" style={{ width: '6em', lineHeight: 1.1 }}>
+            <p
+              className="font-inter font-bold text-gold uppercase whitespace-nowrap"
+              style={{
+                fontSize: '0.312em',
+                letterSpacing: '0.04em',
+                textAlign: 'justify',
+                textAlignLast: 'justify',
+                marginBottom: '0.15em',
+              }}
+            >
+              WESHARE INTERNATIONAL DIGITAL
+            </p>
+            <h1 className="font-playfair text-white font-bold break-keep" style={{ fontSize: '1em' }}>
+              維訊國際數位
+              <span
+                className="block font-inter font-normal whitespace-nowrap"
+                style={{
+                  fontSize: '0.42em',
+                  marginTop: '0.25em',
+                  color: '#cfe4ff',
+                  textAlign: 'justify',
+                  textAlignLast: 'justify',
+                  textJustify: 'inter-character',
+                }}
+              >
+                國際新聞稿發佈與海外買家情報
+              </span>
+            </h1>
+          </div>
         </div>
 
         <h2 className="font-playfair text-2xl md:text-3xl text-gold mb-8 animate-fade-in gold-glow" style={{ animationDelay: '0.6s' }}>
