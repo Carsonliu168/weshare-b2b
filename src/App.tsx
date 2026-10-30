@@ -789,6 +789,9 @@ function ContactSection() {
             >
               {sending ? '送出中…' : '立即諮詢'}
             </button>
+            <p className="font-inter text-text-muted text-sm text-center">
+              或直接來電：<a href="tel:+886-4-36074568" className="text-navy font-semibold underline">04-36074568</a>
+            </p>
             <p className="font-inter text-text-muted text-xs text-center">
               或直接寄信至：<a href="mailto:weshareai168@gmail.com" className="text-gold underline">weshareai168@gmail.com</a>
             </p>
@@ -804,6 +807,11 @@ function Footer() {
     <footer className="w-full overflow-x-hidden geometric-bg relative py-12 px-6 lg:pl-56">
       <Particles />
       <div className="max-w-6xl mx-auto relative z-10 text-center">
+        <p className="font-inter text-white/80 text-sm mb-4">
+          聯絡電話：<a href="tel:+886-4-36074568" className="text-gold hover:underline">04-36074568</a>
+          <span className="mx-2 text-white/30" aria-hidden="true">|</span>
+          <a href="mailto:weshareai168@gmail.com" className="text-gold hover:underline">weshareai168@gmail.com</a>
+        </p>
         <p className="font-inter text-white text-lg mb-2">© 2026 維訊國際數位有限公司</p>
         <p className="font-inter text-gold text-sm mb-4">
           版權所有 · All Rights Reserved

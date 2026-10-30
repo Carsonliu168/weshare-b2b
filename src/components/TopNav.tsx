@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Menu, X } from 'lucide-react';
+import { Menu, Phone, X } from 'lucide-react';
 
 const links = [
   { to: '/', label: '首頁' },
@@ -72,6 +72,13 @@ export default function TopNav() {
           >
             立即諮詢
           </Link>
+          <a
+            href="tel:+886-4-36074568"
+            className="flex items-center gap-2 px-2 py-2 font-inter text-sm text-white/80 hover:text-gold"
+          >
+            <Phone className="w-4 h-4" aria-hidden="true" />
+            撥打電話 04-36074568
+          </a>
         </nav>
       )}
     </header>
