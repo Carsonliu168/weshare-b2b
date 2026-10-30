@@ -2,6 +2,7 @@ import { CheckCircle } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import TopNav from '../components/TopNav';
 import { tiers } from '../data/tiers';
+import { SITE_LAST_UPDATED } from '../data/siteMeta';
 
 export default function Pricing() {
   return (
@@ -83,6 +84,9 @@ export default function Pricing() {
           >
             開始諮詢
           </Link>
+          <p className="font-inter text-white/40 text-xs mt-10">
+            最後更新：<time dateTime={SITE_LAST_UPDATED}>{SITE_LAST_UPDATED}</time>
+          </p>
         </div>
       </main>
     </div>

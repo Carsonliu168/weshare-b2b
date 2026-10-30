@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import TopNav from '../components/TopNav';
 import { faqs } from '../data/faqs';
+import { SITE_LAST_UPDATED } from '../data/siteMeta';
 
 export default function FAQ() {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
@@ -52,6 +53,9 @@ export default function FAQ() {
             <p className="font-inter text-white/50 text-xs leading-relaxed">
               本站提供之情報服務內容係彙整自公開及訂閱資料來源，僅供業務決策參考，
               實際商業成果由客戶自行評估與承擔。
+            </p>
+            <p className="font-inter text-white/40 text-xs mt-3">
+              最後更新：<time dateTime={SITE_LAST_UPDATED}>{SITE_LAST_UPDATED}</time>
             </p>
           </div>
         </div>
