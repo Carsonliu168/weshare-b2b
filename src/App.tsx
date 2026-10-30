@@ -807,6 +807,7 @@ function Footer() {
     <footer className="w-full overflow-x-hidden geometric-bg relative py-12 px-6 lg:pl-56">
       <Particles />
       <div className="max-w-6xl mx-auto relative z-10 text-center">
+        <p className="font-inter text-white/80 text-sm mb-1">台灣・台中市</p>
         <p className="font-inter text-white/80 text-sm mb-4">
           聯絡電話：<a href="tel:+886-4-36074568" className="text-gold hover:underline">04-36074568</a>
           <span className="mx-2 text-white/30" aria-hidden="true">|</span>
