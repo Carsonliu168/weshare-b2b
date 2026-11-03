@@ -146,7 +146,6 @@ function Sidebar({ activeSection }: { activeSection: string }) {
     <nav className="fixed left-0 top-0 h-screen w-56 bg-navy border-r border-gold/40 z-50 hidden lg:flex flex-col">
       <div className="p-6 border-b border-gold/20">
         <div className="font-playfair text-gold text-lg font-semibold">維訊國際數位</div>
-        <div className="text-neon-blue/60 text-xs mt-1 tracking-wider">WESHARE DIGITAL</div>
       </div>
       <div className="flex-1 py-8 px-4 space-y-2">
         {navItems.map((item) => (
@@ -227,36 +226,19 @@ function Section1() {
     >
       <Particles />
       <div className="hero-glow relative z-10 max-w-4xl mx-auto text-center">
-        {/* 品牌鎖定組合：logo 在左，右側三行（英文名／中文名／副標）寬度對齊；中文名為 6 個字 = 6em */}
+        {/* 品牌鎖定組合：圖案 logo 在左，右側兩行（中文名／副標）寬度對齊；中文名為 6 個字 = 6em */}
         <div
           className="flex items-center justify-center gap-3 md:gap-6 mb-8 animate-fade-in"
           style={{ fontSize: 'clamp(1.8rem, calc((100vw - 60px) / 9.2), 4rem)', animationDelay: '0.3s' }}
         >
-          {/* 沿用原本的 /logo.png；原檔四周有透明留白，這裡用 CSS 裁掉留白，讓圖案大小與右側三行文字對得上 */}
-          <div
-            className="relative shrink-0 overflow-hidden h-[2.4em]"
-            style={{ aspectRatio: '292 / 249' }}
-          >
-            <img
-              src="/logo.png"
-              alt="Weshare Logo"
-              className="absolute max-w-none"
-              style={{ width: '171.2%', height: '200.8%', left: '-35.96%', top: '-49.4%' }}
-            />
-          </div>
+          {/* 純圖案 logo（無文字、透明背景） */}
+          <img
+            src="/logo-icon.png"
+            alt="維訊國際數位 標誌"
+            className="shrink-0 object-contain"
+            style={{ height: '1.9em', width: '1.9em' }}
+          />
           <div className="text-left" style={{ width: '6em', lineHeight: 1.1 }}>
-            <p
-              className="font-inter font-bold text-gold uppercase whitespace-nowrap"
-              style={{
-                fontSize: '0.312em',
-                letterSpacing: '0.03em',
-                textAlign: 'justify',
-                textAlignLast: 'justify',
-                marginBottom: '0.15em',
-              }}
-            >
-              WESHARE INTERNATIONAL DIGITAL
-            </p>
             <h1 className="font-playfair text-white font-bold break-keep" style={{ fontSize: '1em' }}>
               維訊國際數位
               <span
