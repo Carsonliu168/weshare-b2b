@@ -22,7 +22,7 @@ const routes = [
     componentKey: 'HomePage',
     outFile: 'dist/index.html',
     title: '國際新聞稿發佈｜AP、Reuters 發稿與海外買家情報｜維訊國際數位',
-    description: '全球 3,000+ 通訊社媒體發稿，結合 AI 數據智能，為企業、品牌與政府機關提供國際媒體曝光與 B2B 買家情報訂閱服務。',
+    description: '涵蓋全球五大洲 120+ 國家的通訊社媒體發稿，結合 AI 數據智能，為企業、品牌與政府機關提供國際媒體曝光與 B2B 買家情報訂閱服務。',
     ogDescription: '全球媒體聲量 × AI 數據智能 = 可量化的商機與影響力', // 首頁社群分享沿用原標語
   },
   {

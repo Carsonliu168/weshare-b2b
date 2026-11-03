@@ -26,7 +26,7 @@ const stages = [
     name: '權威奠基模組',
     english: 'Global PR Trust Bait',
     detail:
-      '部署全球 3,000+ 一線財經媒體發稿矩陣，以第三方公信力建立品牌權威基礎，為後續買家開發建立信任背書。',
+      '部署涵蓋全球五大洲、超過 120 個國家的發稿網絡，以第三方公信力建立品牌權威基礎，為後續買家開發建立信任背書。',
   },
   {
     number: '02',
@@ -270,7 +270,7 @@ function Section1() {
         </div>
 
         <p className="font-inter text-white/75 text-lg md:text-xl max-w-2xl mx-auto mb-6 animate-fade-in leading-relaxed" style={{ animationDelay: '1s' }}>
-          維訊核心服務：全球新聞稿發佈（涵蓋 AP、路透社等 3,000+ 媒體通訊社）、AI 海外買家與經銷商情報蒐集、競爭對手市場情報監控——為企業、政府機關與各類品牌提供國際曝光與市場拓展的情報訂閱服務
+          維訊核心服務：全球新聞稿發佈（涵蓋 AP、路透社等媒體，遍及五大洲 120+ 國家）、AI 海外買家與經銷商情報蒐集、競爭對手市場情報監控——為企業、政府機關與各類品牌提供國際曝光與市場拓展的情報訂閱服務
         </p>
         <div className="flex flex-wrap justify-center gap-2 mb-12 animate-fade-in" style={{ animationDelay: '1.1s' }}>
           {['製造外銷', '生技醫療', '政府機關', '品牌活動', '國際會議', '觀光推廣', '科技新創'].map((tag) => (
@@ -282,8 +282,8 @@ function Section1() {
 
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 sm:gap-8 mb-12 animate-fade-in" style={{ animationDelay: '1.2s' }}>
           <div className="text-center py-4 sm:py-0">
-            <AnimatedCounter end={3000} suffix="+" />
-            <div className="font-inter text-white/70 text-sm mt-2">全球合作通訊社</div>
+            <AnimatedCounter end={120} suffix="+" />
+            <div className="font-inter text-white/70 text-sm mt-2">涵蓋全球國家（五大洲）</div>
           </div>
           <div className="text-center py-4 sm:py-0">
             <AnimatedCounter end={100} suffix="%" />
@@ -304,9 +304,6 @@ function Section1() {
           <ArrowUpRight className="inline-block ml-2 w-5 h-5" />
         </button>
 
-        <div className="mt-6 text-center font-inter text-gold/60 text-xs animate-fade-in" style={{ animationDelay: '1.6s' }}>
-          Powered by Weshare AI Intelligence
-        </div>
       </div>
     </section>
   );
@@ -322,7 +319,7 @@ function Section2() {
 
         <div className="bg-navy rounded-xl p-8 border-l-4 border-gold mb-12">
           <p className="font-inter text-gold text-lg leading-relaxed">
-            維訊透過全球 3,000+ 精選通訊社網絡發稿，為企業、品牌與政府機關解決國際曝光難題，其中涵蓋 Yahoo 財經、美聯社、路透社等月活躍用戶上億的頂級媒體平台。每篇稿件發佈期間同步被 Google 等搜尋引擎收錄索引，強化曝光期間的國際能見度與搜尋觸及。
+            維訊透過涵蓋全球五大洲、超過 120 個國家的通訊社網絡發稿，為企業、品牌與政府機關解決國際曝光難題，其中涵蓋 Yahoo 財經、美聯社、路透社等月活躍用戶上億的頂級媒體平台。每篇稿件發佈期間同步被 Google 等搜尋引擎收錄索引，強化曝光期間的國際能見度與搜尋觸及。
           </p>
         </div>
 
@@ -457,7 +454,7 @@ function Section5() {
       label: '全球媒體矩陣',
       traditional: '無全球媒體矩陣',
       saas: '無媒體發佈資源',
-      weshare: '全球 3,000+ 通訊社矩陣',
+      weshare: '涵蓋全球五大洲 120+ 國家的通訊社網絡',
     },
     {
       label: '執行方式',
